@@ -1225,6 +1225,17 @@ select:visited {
     transform: scaleY(0);
   }
 }
+.ag-section-title-4 .sec_title {
+  font-size: 65px;
+  line-height: 1.15;
+  letter-spacing: 1px;
+  color: var(--ag-title-color);
+}
+.ag-section-title-4.text-center {
+  margin: 0 auto;
+  max-width: 700px;
+}
+
 .mt-5 {
   margin-top: 5px;
 }
@@ -2885,4 +2896,8 @@ select:visited {
 /*---------------------------------------------------- */
 /*Service area*/
 /*----------------------------------------------------*/
+.ag-service-section-4 {
+  background-color: #D5FA52;
+}
+
 /*---------------------------------------------------- */

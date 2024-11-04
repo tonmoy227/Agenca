@@ -207,7 +207,19 @@ select:visited {
 		transform: scaleY(0)
 	}
 }
+.ag-section-title-4 {
+	.sec_title {
+		font-size: 65px;
+		line-height: 1.15;
+		letter-spacing: 1px;
+		color: var(--ag-title-color)
+	}
+	&.text-center {
+		margin: 0 auto;
+		max-width: 700px;
 
+	}
+}
 // txa-common-css-start
 
 @for $i from 1 through 40 {
