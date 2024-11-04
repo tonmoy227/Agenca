@@ -1,0 +1,33 @@
+/*=========
+Font load
+===========*/
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+:root {
+	--ag-body-color: #414141;
+	--ag-title-color: #060606;
+	--ag-heading: "Anton", sans-serif;
+	--ag-body-font: "Urbanist", sans-serif;
+	--ag-color-1: #5956F0;
+	--ag-color-2: #FF50B8;
+	--ag-gradient:  linear-gradient(90deg, var(--ag-color-1) 0%, var(--ag-color-2) 100%);
+	--cube-1: cubic-bezier(0.55, 0.085, 0, 0.99);
+	--cube-2: all .25s cubic-bezier(.645,.045,.355,1);
+
+}
+%gradient-text {
+	background: var(--ag-gradient);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+// Responsive Variables
+$over:'(min-width: 1800px)';
+$xxxl: 'only screen and (min-width: 1600px) and (max-width: 1799px)';
+$xxl: 'only screen and (min-width: 1400px) and (max-width: 1599px)';
+$xl: 'only screen and (min-width: 1200px) and (max-width: 1399px)';
+$lg: 'only screen and (min-width: 992px) and (max-width: 1199px)';
+$md:'only screen and (min-width: 768px) and (max-width: 991px)';
+$sm: 'only screen and (min-width: 576px) and (max-width: 767px)';
+$xs:'(max-width: 767px)';
+$xxs:'(max-width: 480px)';
+$xxxs:'(max-width: 360px)';
