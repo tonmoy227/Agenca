@@ -200,6 +200,25 @@ select:visited {
 	padding: 0;
 	z-index: 1;
 }
+.tx-tab-btn {
+	.nav-tabs .nav-item.show .nav-link,
+	.nav-tabs .nav-link.active,
+	.nav-tabs .nav-link {
+		border: none;
+		padding-top: 0;
+		padding-right: 0;
+		border-radius: 0;
+		margin-bottom: 0;
+		cursor: pointer;
+		background-color: transparent;
+	}
+	.nav-tabs {
+		border: none;
+	}
+	.nav {
+		display: inherit;
+	}
+}
 @keyframes vt-spin {
 	50% {
 		-webkit-transform: scaleY(0);
@@ -217,6 +236,66 @@ select:visited {
 		margin: 0 auto;
 		max-width: 700px;
 
+	}
+}
+.ag-section-title {
+	.subtitle {
+		font-size: 20px;
+		position: relative;
+		display: inline-block;
+		padding-left: 38px;
+		padding-right: 38px;
+		font-family: var(--ag-heading);
+		@extend%gradient-text;
+		span {
+			left: 0;
+			top: 0;
+			position: absolute;
+			&:before,
+			&:after {
+				top: 10px;
+				left: 7px;
+				width: 8px;
+				height: 8px;
+				content: '';
+				position: absolute;
+				border-radius: 100%;
+				background: var(--ag-gradient);
+			}
+			&:before {
+				top: 12px;
+				left: 0;
+				width: 5px;
+				height: 5px;
+			}
+			i {
+				top: 8px;
+				left: 17px;
+				width: 14px;
+				height: 14px;
+				position: absolute;
+				border-radius: 100%;
+				background: var(--ag-gradient);
+			}
+		}
+		.right-dot {
+			right: 0;
+			top: 30px;
+			display: none;
+			transform: rotate(180deg);
+			left: auto;
+			&:before {
+				top: 11px;
+			}
+			&:after {
+				top: 10px;
+			}
+		}
+	}
+	&.text-center {
+		.right-dot {
+			display: block;
+		}
 	}
 }
 // txa-common-css-start

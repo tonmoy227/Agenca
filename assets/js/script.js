@@ -104,14 +104,12 @@ Last change:    00/00/00
 			// autoplay: {
 			// 	delay: 5000,
 			// },
-
-
 			breakpoints: {
 				0: {
 					slidesPerView: 1,
 				},
 				576: {
-					slidesPerView: 2,
+					slidesPerView: 1,
 				},
 				768: {
 					slidesPerView: 2,

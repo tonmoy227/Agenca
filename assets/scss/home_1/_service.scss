@@ -1,0 +1,81 @@
+.ar-service-tab-btn {
+	max-width: 330px;
+	.btn-title-text {
+		max-width: 280px;
+		h3 {
+			font-size: 40px;
+			padding-bottom: 32px;
+			color: var(--ag-title-color);
+		}
+		p {
+			position: relative;
+			padding-left: 30px;
+			&:before {
+				top: 0;
+				left: 0;
+				width: 6px;
+				height: 100%;
+				content: '';
+				border-radius: 10px;
+				position: absolute;
+				background: var(--ag-gradient);
+			}
+		}
+	}
+	.ser-btn-list {
+		margin-top: 28px;
+		.nav-item {
+			padding-left: 22px;
+			margin-bottom: 10px;
+			position: relative;
+			&:before {
+				left: 0;
+				top: 14px;
+				width: 10px;
+				height: 3px;
+				content: '';
+				position: absolute;
+				background-color: var(--ag-title-color);
+			}
+		}
+		.nav-link {
+			padding: 0;
+			font-size: 20px;
+			font-weight: 700;
+			color: var(--ag-title-color);
+			position: relative;
+			&:before {
+				top: 17px;
+				right: 40px;
+				width: 54px;
+				height: 1px;
+				content: '';
+				position: absolute;
+				transform-origin: top left;
+				transition:  500ms var(--cube-1);
+				background-color: var(--ag-title-color);
+				clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+			}
+			&:after {
+				top: 2px;
+				right: 0;
+				font-weight: 900;
+				content: '\f178';
+				position: absolute;
+				font-family: 'Font Awesome 5 Free';
+				transition:  500ms var(--cube-1);
+				clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+			}
+			&.active {
+				color: var(--ag-title-color);
+				&:before {
+					clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
+				}
+				&:after {
+					transition-delay: 350ms;
+					clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
+				}
+			}
+		}
+	}
+}
