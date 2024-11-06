@@ -23,7 +23,7 @@
 		padding-bottom: 0;
 		padding-top: 150px;
 	}
-	&:before {
+	.color_bg {
 		left: 0;
 		bottom: 0;
 		width: 100%;
@@ -32,6 +32,37 @@
 		max-height: 542px; 
 		position: absolute;
 		background-color: #D5FA52;
+		.box-shape {
+			top: 0;
+			left: 0;
+			width: 156px;
+			height: 156px;
+			@media #{$lg,$md,$sm,$xs} {
+				display: none;
+			} 
+			span {
+				width: 52px;
+				height: 52px;
+				position: absolute;
+				background-color: var(--ag-title-color);
+				&:nth-child(1) {
+					top: 0;
+					left: 0;
+				}
+				&:nth-child(2) {
+					left: 0;
+					bottom: 0;
+				}
+				&:nth-child(3) {
+					top: 0;
+					right: 0;
+				}
+				&:nth-child(4) {
+					top: 52px;
+					right: 52px;
+				}
+			}
+		}
 		@media #{$md,$sm} {
 			max-height: 230px;
 		}

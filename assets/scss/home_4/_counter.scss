@@ -1,0 +1,42 @@
+.ag-counter-content-4 {
+	gap: 30px;
+	padding-top: 60px;
+	border-top: 1px solid #BEBEBE; 
+	@media #{$md,$sm,$xs} {
+		flex-wrap: wrap;
+	}
+}
+.ag-counter-item-4 {
+	gap: 12px;
+	display: flex;
+	align-items: end;
+	h3 {
+		line-height: 1;
+		font-size: 100px;
+		font-weight: 600;
+		color: var(--ag-title-color);
+		font-family: var(--ag-body-font);
+		@media #{$xl} {
+			font-size: 90px;
+		}
+		@media #{$lg} {
+			font-size: 75px;
+		}
+		@media #{$md,$sm,$xs} {
+			font-size: 60px;
+		}
+		@media #{$xxs} {
+			font-size: 50px;
+		}
+	}
+	p {
+		font-size: 20px;
+		max-width: 110px;
+		line-height: 1.2;
+		padding-bottom: 10px;
+		@media #{$xxs} {
+			font-size: 18px;
+			padding-bottom: 0;
+		}
+	}
+}

@@ -1,0 +1,140 @@
+.ag-about-section-4 {
+	padding-top: 180px;
+	@media #{$sm,$xs} {
+		padding-top: 80px;
+	}
+}
+.ag-about-title-4 {
+	z-index: 1;
+	.ag-sub-watermark {
+		left: 0;
+		top: -45px;
+		z-index: -1;
+		color: #F5F5F5;
+		font-size: 65px;
+		position: absolute;
+		font-family: var(--ag-heading);
+	}
+	.title-text {
+		padding-left: 180px;
+		@media #{$sm,$xs} {
+			padding-left: 20px;
+		}
+		h2 {
+			font-size: 32px;
+			letter-spacing: 1px;
+			color: var(--ag-title-color);
+			@media #{$sm,$xs} {
+				font-size: 26px;
+			}
+			@media #{$xxs} {
+				font-size: 24px;
+			}
+		}
+		.cta-btn {
+			padding: 2px;
+			border-radius: 6px; 
+			display: inline-block;
+			background: var(--ag-gradient); 
+			a {
+				display: flex;
+				font-size: 16px;
+				font-weight: 600;
+				background: #fff; 
+				padding: 10px 30px; 
+				border-radius: 4px; 
+				align-items: center;
+				white-space: nowrap;
+				justify-content: center;
+				span {
+					letter-spacing: -1px;
+					@extend%gradient-text;
+				}
+			}
+		}
+	}
+}
+.ag-about-img-wrap-4 {
+	gap: 32px;
+	@media #{$sm,$xs} {
+		flex-wrap: wrap;
+		margin-top: 30px;
+		justify-content: center;
+	}
+	.item-img-1 {
+		padding-top: 65px;
+		.box-shape {
+			top: 0;
+			left: 0;
+			z-index: 1;
+			height: 76px;
+			width: 101.33px;
+			span {
+				width: 25.33px;
+				height: 25.33px;
+				position: absolute;
+				background-color: #fff;
+				&:nth-child(1) {
+					top: 0;
+					left: 0;
+				}
+				&:nth-child(2) {
+					left: 0;
+					bottom: 0;
+				}
+				&:nth-child(3) {
+					left: 25.33px;
+					bottom: 25.33px;
+				}
+				&:nth-child(4) {
+					top: 0;
+					left: 50.66px;
+				}
+				&:nth-child(5) {
+					bottom: 0;
+					left: 50.66px;
+				}
+				&:nth-child(6) {
+					right: 0;
+					bottom: 25.33px;
+				}
+			}
+		}
+		.circle-img {
+			top: -14px;
+			z-index: 1;
+			right: 170px;
+			@media #{$md,$sm,$xs} {
+				top: 0;
+			}
+
+		}
+	}
+	.item-img-2 {
+		.box-shape {
+			bottom: 0;
+			left: 0;
+			z-index: 1;
+			height: 76px;
+			width: 76px;
+			span {
+				width: 25.33px;
+				height: 25.33px;
+				position: absolute;
+				background-color: #fff;
+				&:nth-child(1) {
+					top: 0;
+					right: 0;
+				}
+				&:nth-child(2) {
+					left: 0;
+					bottom: 0;
+				}
+				&:nth-child(3) {
+					left: 25.33px;
+					bottom: 25.33px;
+				}
+			}
+		}
+	}
+}
