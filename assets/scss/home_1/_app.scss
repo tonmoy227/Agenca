@@ -6,6 +6,11 @@
 		z-index: -1;
 		width: 100%;
 		height: 100%;
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
 	}
 }
 .app-bg-content {
@@ -23,11 +28,22 @@
 			color: #fff;
 		}
 	}
+	@media #{$md,$sm,$xs} {
+		margin: 0 auto	;
+		text-align: center;
+	}
 }
 .ag-app-cont-img {
 	z-index: 2;
 	top: -95px;
 	right: -40px;
+	@media #{$lg} {
+		right: -230px;
+	}
+	@media #{$md,$sm,$xs} {
+		display: none;
+	}
+
 }
 .ag-app-sponsor-content {
 	z-index: 2;
@@ -35,10 +51,20 @@
 	position: relative;
 	margin-top: -130px;
 	border-radius: 20px;
-	padding: 10px 15px 10px;
+	padding: 30px 15px 40px;
 	background-color: #000000;
 	.ag-app-s-item-1 {
 		width: 20%;
-		margin: 50px 0px;
+		margin: 40px 0px;
+		@media #{$md,$sm,$xs} {
+			width: 25%;
+		}
+		@media #{$xs} {
+			width: 33.33%;
+		}
+		@media #{$xxs} {
+			width: 50%;
+			margin: 20px 0px;
+		}
 	}
 }

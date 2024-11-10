@@ -167,7 +167,6 @@ Last change:    00/00/00
 		filterValue = filterFns[filterValue] || filterValue;
 		$grid.isotope({ filter: filterValue });
 	});
-
 	$(".button-group").each(function(i, buttonGroup) {
 		var $buttonGroup = $(buttonGroup);
 		$buttonGroup.on("click", "button", function() {
@@ -175,4 +174,40 @@ Last change:    00/00/00
 			$(this).addClass("is-checked");
 		});
 	});
+	// Testimonial 1
+	if($('.ag-ts-slider').length) {
+		let slider = new Swiper('.ag-ts-slider', {
+			loop: true,
+			spaceBetween: 35,
+			speed: 500,
+			navigation: {
+				nextEl: ".test-button-next",
+				prevEl: ".test-button-prev",
+			},
+			breakpoints: {
+				0: {
+					slidesPerView: 1,
+				},
+				576: {
+					slidesPerView: 1,
+				},
+				768: {
+					slidesPerView: 2,
+				},
+				992: {
+					slidesPerView: 2,
+				},
+				1200: {
+					slidesPerView: 3,
+				},
+				1400: {
+					slidesPerView: 3,
+				},
+				1600: {
+					slidesPerView: 3,
+				},
+			},
+
+		});
+	}
 })(jQuery);
