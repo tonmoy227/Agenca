@@ -106,6 +106,119 @@
 			}
 		}
 	}
+	&.header_style_two {
+		.ag-header-content {
+			padding: 50px 60px 0px;
+			@media #{$xxl} {
+				padding: 30px 30px 0px;
+			}
+			@media #{$xl,$lg,$md,$sm,$xs} {
+				padding: 30px 15px 0px;
+			}
+			.main-navigation {
+				@media #{$md,$sm,$xs} {
+					display: none;
+				}
+				li {
+					color: #fff;
+					font-weight: 900;
+					margin: 0px 35px;
+					@media #{$xxl} {
+						margin: 0px 25px;
+					}
+					@media #{$xl,$lg} {
+						margin: 0px 15px;
+					}
+				}
+			}
+			.ag-header-action {
+				gap: 20px 55px;
+				@media #{$xxl} {
+					gap: 20px 25px;
+				}
+				@media #{$xl,$lg,$md,$sm,$xs} {
+					gap: 20px 15px;
+				}
+				.search-btn {
+					color: #fff;
+					padding: 0;
+					border: none;
+					background-color: transparent;
+				}
+				.header-cta {
+					gap: 16px;
+					max-width: 215px;
+					@media #{$xl} {
+						gap: 10px;
+						max-width: 180px;
+					}
+					@media #{$lg,$md,$sm,$xs} {
+						display: none !important;
+					}
+					.item-icon {
+						width: 50px;
+						height: 50px;
+						border-radius: 100%;
+						background-color: #fff;
+						@media #{$xl} {
+							width: 40px;
+							height: 40px;
+							font-size: 14px;
+						}
+						i {
+							@extend%gradient-text;
+						}
+					}
+					.item-text {
+						display: flex;
+						flex-wrap: wrap;
+						max-width: 142px;
+						@media #{$xl} {
+							max-width: 120px;
+						}
+						span {
+							font-size: 13px;
+							font-weight: 700;
+							display: inline-block;
+							@extend%gradient-text;
+						}
+						a {
+							width: 100%;
+							color: #fff;
+							display: block;
+							font-weight: 700;
+							@media #{$xl} {
+								font-size: 14px;
+							}
+						}
+					}
+				}
+				.cta-btn {
+					@media #{$md,$sm,$xs} {
+						display: none;
+					}
+					a {
+						color: #fff;
+						font-size: 16px;
+						font-weight: 800;
+						padding: 20px 30px;
+						border-radius: 50px;
+						letter-spacing: -1px;
+						white-space: nowrap;
+						background: var(--ag-gradient);
+						background-size: 200%, 1px;
+						@media #{$xl,$lg} {
+							padding: 15px 20px;
+						}
+
+					}
+				}
+			}
+			.mobile_menu_button span {
+				background-color: #fff;
+			}
+		}
+	}
 	&.header_style_four {
 		padding-top: 38px;
 		@media #{$xs} {

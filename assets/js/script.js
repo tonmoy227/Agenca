@@ -22,8 +22,25 @@ Last change:    00/00/00
 		lenis.raf(time);
 		requestAnimationFrame(raf);
 	}
-
 	requestAnimationFrame(raf);
+
+	document.addEventListener("mousemove", function e(t) {
+		try {
+			t.target;
+			gsap.timeline({
+				defaults: {
+					x: t.clientX,
+					y: t.clientY
+				}
+			}).to(".cursor1", {
+				ease: "power2.out"
+			}).to(".cursor2", {
+				ease: "power2.out"
+			}, "-=0.4")
+		} catch (o) {
+			console.log(o)
+		}
+	});
 	// Background Image
 	$('[data-background]').each(function() {
 		$(this).css('background-image', 'url('+ $(this).attr('data-background') + ')');
@@ -271,6 +288,31 @@ Last change:    00/00/00
 				delay: 1,
 				opacity: 0,
 				rotationX: -80,
+				force3D: true,
+				transformOrigin: "top center -70",
+				stagger: 0.1
+			});
+		});
+	}
+	if ($('.title_text_2').length) {
+		gsap.utils.toArray(".title_text_2").forEach(element => {
+			let timeline = gsap.timeline({
+				scrollTrigger: {
+					trigger: element,
+					start: "top 90%",
+					end: "bottom 60%",
+					scrub: false,
+					markers: false,
+					toggleActions: "play none none none"
+				}
+			});
+			let splitTextInstance = new SplitText(element, { type: "words" });
+			gsap.set(element, { perspective: 500 });
+			timeline.from(splitTextInstance.words, {
+				duration: 1,
+				delay: 1,
+				opacity: 0,
+				x: 120,
 				force3D: true,
 				transformOrigin: "top center -70",
 				stagger: 0.1
