@@ -65,6 +65,7 @@
 		position: absolute;
 		border-radius: 30px;
 		background: var(--ag-gradient);
+		background-size: 200%, 1px;
 		&:before {
 			right: 18px;
 			bottom: -2px;
@@ -122,6 +123,9 @@
 			border-radius: 40px;
 			display: inline-block;
 			background-color: #323030;
+			&:hover {
+				letter-spacing: 1px;
+			}
 		}
 	}
 	&.popular {
@@ -147,6 +151,7 @@
 		.p-btn {
 			a {
 				background: var(--ag-gradient);
+				background-size: 200%, 1px;
 			}
 		}
 	}

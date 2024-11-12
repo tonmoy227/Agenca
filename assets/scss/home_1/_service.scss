@@ -1,3 +1,16 @@
+@keyframes moving_1 {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	50% {
+		transform: rotate(30deg);
+	}
+
+	0% {
+		transform: rotate(0deg);
+	}
+}
 .ag-service-tab-btn {
 	width: 100%;
 	max-width: 330px;
@@ -8,6 +21,8 @@
 	.ag-ser-shape {
 		top: 60px;
 		right: -50px;
+		transform-origin: left top;
+		animation: moving_1 4s var(--cube-1) infinite;
 		@media #{$lg,$md,$sm,$xs} {
 			right: 0;
 		}
@@ -21,6 +36,9 @@
 			font-size: 40px;
 			padding-bottom: 32px;
 			color: var(--ag-title-color);
+			@media #{$xxs} {
+				font-size: 30px;
+			}
 		}
 		p {
 			position: relative;
@@ -28,12 +46,23 @@
 			&:before {
 				top: 0;
 				left: 0;
+				bottom: 0;
 				width: 6px;
-				height: 100%;
+				height: 0%;
 				content: '';
+				margin: auto;
 				border-radius: 10px;
 				position: absolute;
+				transition: 1200ms var(--cube-1);
 				background: var(--ag-gradient);
+				background-size: 200%, 1px;
+			}
+		}
+		&.active {
+			p {
+				&:before {
+					height: 100%;
+				}
 			}
 		}
 	}
@@ -116,9 +145,10 @@
 		overflow: hidden;
 		position: relative;
 		border-radius: 100%;
-		transform: translateX(70px) scale(0.7);
-		transition: 1s var(--cube-1);
+		transform: translateX(200px) scale(0.7);
+		transition: all 500ms ease-in-out;
 		transform-origin: left;
+		transition-delay: 0s;
 		img {
 			width: 100%;
 			height: 100%;
@@ -155,7 +185,7 @@
 				padding-bottom: 10px;
 			}
 			@media #{$xxs} { 
-				font-size: 40px;
+				font-size: 30px;
 			}
 		}
 	}
@@ -203,7 +233,6 @@
 .ag-service-tab-desc .tab-pane:is(.show) {
 	.ag-s-img-text-1 {
 		.item-img { 
-			transition-delay: 400ms;
 			transform: translateX(0px) scale(1);
 		}
 	}
@@ -229,6 +258,9 @@
 			font-size: 30px;
 			padding-bottom: 10px;
 			color: var(--ag-title-color);
+			@media #{$xxs} {
+				font-size: 26px;
+			}
 		}
 	}
 	.back-part {

@@ -1,6 +1,14 @@
+.ag-fs-wrap {
+	overflow: hidden;
+	padding-top: 75px;
+	margin-top: -245px;
+	@media #{$md,$sm,$xs} {
+		margin-top: 60px;
+		padding-top: 0;
+	}
+}
 .ag-feature-service-content {
 	gap: 35px;
-	margin-top: -170px;
 	border-radius: 20px;
 	padding: 70px 60px 55px;
 	background-color: #f5f0ec;
@@ -9,7 +17,6 @@
 	}
 	@media #{$md,$sm,$xs} {
 		flex-wrap: wrap;
-		margin-top: 60px;
 		justify-content: center;
 		padding: 40px 30px 30px;
 	}
@@ -26,10 +33,16 @@
 				border-radius: 100%;
 				justify-content: center;
 				background-color: #fdaa63;
+				transition: 500ms var(--cube-1);
 			}
 			span {
 				font-weight: 700;
 				color: var(--ag-title-color);
+			}
+			&:hover {
+				i {
+					transform: scale(1.1);
+				}
 			}
 		}
 	}
@@ -108,11 +121,14 @@
 			&:before {
 				top: 0;
 				left: 0;
+				bottom: 0;
 				width: 1px;
-				height: 100%;
+				height: 0%;
 				content: '';
+				margin: auto;
 				position: absolute;
 				background-color: #b3b3b3;
+				transition: 2s var(--cube-1);
 				@media #{$lg} {
 					display: none;
 				}
@@ -130,14 +146,19 @@
 				color: var(--ag-title-color);
 			}
 			.state-item {
-				width: 100%;
+				width: 0%;
 				height: 45px;
 				display: flex;
 				padding: 0px 15px;
 				align-items: center;
+				transition: all 1200ms ease-in-out;
 				p {
+					opacity: 0;
 					color: #fff;
 					font-weight: 700;
+					visibility: hidden;
+					white-space: nowrap;
+					transition: all 500ms ease-in-out;
 					span {
 						margin-right: 20px;
 						@media #{$lg} {
@@ -152,17 +173,36 @@
 					}
 				}
 				&:nth-child(2) {
-					width: 80%;
+					max-width: 80%;
 					background: var(--ag-gradient);
+					background-size: 200%, 1px;
 					@media #{$lg,$md,$sm,$xs} {
-						width: 100%;
+						max-width: 100%;
 					}
 				}
 				&:nth-child(3) {
-					width: 50%;
+					max-width: 50%;
 					background: #1c2125;
 					@media #{$lg,$md,$sm,$xs} {
-						width: 100%;
+						max-width: 100%;
+					}
+				}
+			}
+		}
+		&.active {
+			ul {
+				&:before {
+					height: 100%;
+				}
+			}
+			.ag-ser-state {
+				.state-item {
+					width: 100%;
+					transition-delay: 800ms;
+					p {
+						opacity: 1;
+						visibility: visible;
+						transition-delay: 900ms;
 					}
 				}
 			}

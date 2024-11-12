@@ -9,7 +9,7 @@ Font load
 	--ag-body-font: "Urbanist", sans-serif;
 	--ag-color-1: #5956F0;
 	--ag-color-2: #FF50B8;
-	--ag-gradient:  linear-gradient(90deg, var(--ag-color-1) 0%, var(--ag-color-2) 100%);
+	--ag-gradient:  linear-gradient(90deg, var(--ag-color-1) 0%, var(--ag-color-2) 50%, var(--ag-color-1));
 	--cube-1: cubic-bezier(0.55, 0.085, 0, 0.99);
 	--cube-2: all .25s cubic-bezier(.645,.045,.355,1);
 
@@ -18,6 +18,7 @@ Font load
 	background: var(--ag-gradient);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
+	background-size: 200%, 1px;
 }
 
 // Responsive Variables

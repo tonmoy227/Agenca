@@ -12,7 +12,7 @@ Last change:    00/00/00
 
 	// Scrolljng
 	const lenis = new Lenis({
-		duration: 0.7,
+		duration: 1,
 		easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
 		direction: 'vertical',
 		smooth: true,
@@ -29,8 +29,49 @@ Last change:    00/00/00
 		$(this).css('background-image', 'url('+ $(this).attr('data-background') + ')');
 	});
 	gsap.registerPlugin(ScrollTrigger);
+	// search-popup-start
+	$('.search_btn_toggle').on('click', function() {
+		$('.overlay, .search_box_active').addClass('active');
+	});
 
-	
+	$('.overlay, .search_box_close').on('click', function() {
+		$('.search_box_active').removeClass('active');
+		$('.overlay').removeClass('active');
+	});
+	$('.vartcal_toggle').on('click', function(){
+		$('.vt-vertical-menu').toggleClass("active");
+	});
+	$(document).on('keydown', function(event) {
+		if (event.key === 'Escape') {
+			$('.search_box_active').removeClass('active');
+			$('.overlay').removeClass('active');
+		}
+	});
+	// Animation
+	if($('.wow').length){
+		var wow = new WOW(
+		{
+			boxClass:     'wow',
+			animateClass: 'animated',
+			offset:       0,
+			mobile:       true,
+			live:         true
+		}
+		);
+		wow.init();
+	};
+	$(window).on("load", function () {
+		Splitting();
+	});
+	jQuery('.video_box').magnificPopup({
+		disableOn: 200,
+		type: 'iframe',
+		mainClass: 'mfp-fade',
+		removalDelay: 160,
+		preloader: false,
+		fixedContentPos: false,
+	});
+
 	// Service Item
 	gsap.utils.toArray(".ag-service-item-4").forEach(service_item => {
 		ScrollTrigger.create({
@@ -210,4 +251,173 @@ Last change:    00/00/00
 
 		});
 	}
+	// Hero Title 1
+	if ($('.title_text').length) {
+		gsap.utils.toArray(".title_text").forEach(element => {
+			let timeline = gsap.timeline({
+				scrollTrigger: {
+					trigger: element,
+					start: "top 90%",
+					end: "bottom 60%",
+					scrub: false,
+					markers: false,
+					toggleActions: "play none none none"
+				}
+			});
+			let splitTextInstance = new SplitText(element, { type: "lines" });
+			gsap.set(element, { perspective: 500 });
+			timeline.from(splitTextInstance.lines, {
+				duration: 1,
+				delay: 1,
+				opacity: 0,
+				rotationX: -80,
+				force3D: true,
+				transformOrigin: "top center -70",
+				stagger: 0.1
+			});
+		});
+	}
+	// Card Active
+	const active_card = gsap.utils.toArray('.txt_item_active');
+	active_card.forEach(svg => {
+		gsap.to(svg, {
+			scrollTrigger: {
+				trigger: svg,
+				start: "top 100%",
+				end: "bottom bottom",
+				toggleClass: "active",
+				duration: 3,
+				delay:1,
+				toggleActions: "play play play reverse",
+				once: true,
+			}
+		});
+	});
+	// TItie Animation
+	window.onload = function () {
+		const st = $(".txa-split-text");
+		if (st.length === 0) return;
+		gsap.registerPlugin(SplitText);
+		st.each((index, el) => {
+			const splitTextInstance = new SplitText(el, {
+				type: "lines,words,chars",
+				linesClass: "split-line",
+			});
+			gsap.set(el, { perspective: 400 });
+			if ($(el).hasClass("txa-split-in-right")) {
+				gsap.set(splitTextInstance.chars, {
+					opacity: 1,
+					webkitTextStroke: "1px black",
+					color: "transparent",
+					x: 20,
+					ease: "back.out",
+				});
+			}
+			el.anim = gsap.to(splitTextInstance.chars, {
+				scrollTrigger: {
+					trigger: el,
+					start: "top 90%",
+				},
+				x: 0,
+				y: 0,
+				rotateX: 0,
+				color: "inherit",
+				webkitTextStroke: "0px white",
+				scale: 1,
+				opacity: 1,
+				duration: 0.8,
+				stagger: 0.02,
+			});
+		});
+	};
+	gsap.utils.toArray('.appear_top').forEach((el) => { 
+		gsap.fromTo(el, 
+			{ opacity: 0, y: 150, transformOrigin: 'center center' },
+			{ opacity: 1, y: 0, duration: 1, 
+			scrollTrigger: {
+				trigger: el,
+				scrub: 2,
+				start: "top 90%",
+				end: "top 70%",
+				toggleActions: "play none none reverse",
+				markers: false
+			}
+		}
+		);
+	});
+	gsap.utils.toArray(".img-zoom").forEach(function(container) {
+		let image = container.querySelector("img");
+		gsap.fromTo(image, 
+		{ 
+			scale: 1.5, 
+			filter: 'grayscale(1)' 
+		},
+		{
+			scale: 1,
+			filter: 'grayscale(0)',
+			scrollTrigger: {
+				trigger: container,
+				scrub: true,
+				pin: false,
+			},
+			ease: "none",
+		});
+	});
+	gsap.utils.toArray(".img-rotate").forEach(function(container) {
+		let image = container.querySelector("img");
+		gsap.fromTo(image, 
+		{ 
+			scale: .5, 
+			rotate: '360deg',
+		},
+		{
+			scale: 1,
+			rotate: '0',
+			scrollTrigger: {
+				trigger: container,
+				scrub: true,
+				pin: false,
+			},
+			ease: "none",
+		});
+	});
+	gsap.utils.toArray('.appear_angle').forEach((el) => { 
+		gsap.fromTo(el, 
+			{ opacity: 0, y: 250, x: -250, transformOrigin: 'center center' },
+			{ opacity: 1, y: 0, x: 0, duration: 1, 
+			scrollTrigger: {
+				trigger: el,
+				scrub: 2,
+				start: "top 90%",
+				end: "top 70%",
+				stagger: 0.2,
+				toggleActions: "play none none reverse",
+				markers: false
+			}
+		}
+		);
+	});
+
+	gsap.utils.toArray(".ag-text p").forEach(paragraph => {
+		let timeline = gsap.timeline({
+			scrollTrigger: {
+				trigger: paragraph,
+				start: "top 90%",
+				end: "bottom 60%",
+				toggleActions: "play none none none"
+			}
+		});
+		let splitText = new SplitText(paragraph, { type: "lines" });
+		gsap.set(paragraph, { perspective: 400 });
+		timeline.from(splitText.lines, {
+			opacity: 0,
+			y: 20,
+			transformOrigin: "top center -50",
+			force3D: true,
+			duration: 1,
+			delay: 0.5,
+			stagger: 0.1
+		});
+	});
+
 })(jQuery);

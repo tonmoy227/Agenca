@@ -130,6 +130,11 @@
 				position: absolute;
 				border-radius: 100px;
 				background: var(--ag-gradient);
+				background-size: 200%, 1px;
+				transition: all 500ms ease-in-out;
+				&:hover {
+					background-position: 120%;
+				}
 			}
 		}
 		a {
