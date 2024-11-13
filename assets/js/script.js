@@ -320,6 +320,7 @@ Last change:    00/00/00
 		});
 	}
 	// Card Active
+
 	const active_card = gsap.utils.toArray('.txt_item_active');
 	active_card.forEach(svg => {
 		gsap.to(svg, {
@@ -335,6 +336,26 @@ Last change:    00/00/00
 			}
 		});
 	});
+	if (window.matchMedia("(min-width: 1200px)").matches) { 
+		var Hero_pin = document.querySelectorAll(".ag-hero-section-2")
+		Hero_pin.forEach((item) => {
+			gsap.to(item, {
+				scrollTrigger: {
+					trigger: item,
+					markers: false,
+					pin: true,
+					pinSpacing: false,
+					start: "top top",
+					end: "bottom +=200",
+					onEnter: () => {
+						setTimeout(() => {
+							document.querySelector(".ag-hero-wrap-2").classList.add("active");
+						}, 1000); 
+					},
+				},
+			});
+		});
+	}
 	// TItie Animation
 	window.onload = function () {
 		const st = $(".txa-split-text");
@@ -461,5 +482,25 @@ Last change:    00/00/00
 			stagger: 0.1
 		});
 	});
-
+	gsap.utils.toArray(".ag-text-2 p").forEach(paragraph => {
+		let timeline = gsap.timeline({
+			scrollTrigger: {
+				trigger: paragraph,
+				start: "top 90%",
+				end: "bottom 60%",
+				toggleActions: "play none none none"
+			}
+		});
+		let splitText = new SplitText(paragraph, { type: "lines" });
+		gsap.set(paragraph, { perspective: 400 });
+		timeline.from(splitText.lines, {
+			opacity: 0,
+			y: 20,
+			transformOrigin: "top center -50",
+			force3D: true,
+			duration: 1,
+			delay: 2,
+			stagger: 0.1
+		});
+	});
 })(jQuery);

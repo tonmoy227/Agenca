@@ -214,8 +214,11 @@
 					}
 				}
 			}
-			.mobile_menu_button span {
-				background-color: #fff;
+			.mobile_menu_button {
+				margin-left: 5px;
+				span {
+					background-color: #fff;
+				}
 			}
 		}
 	}

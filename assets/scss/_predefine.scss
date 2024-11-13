@@ -31,6 +31,7 @@ body {
 		height: 40px;
 		text-align: center;
 		background: var(--ag-gradient);
+		background-size: 200%, 1px;
 	}
 	button.mfp-close {
 		right: 0;
@@ -40,6 +41,7 @@ body {
 		height: 40px;
 		text-align: center;
 		background: var(--ag-gradient);
+		background-size: 200%, 1px;
 	}
 }
 body::-webkit-scrollbar {
@@ -54,6 +56,7 @@ body::-webkit-scrollbar-thumb {
 	outline: none;
 	border-radius: 30px;
 	background: var(--ag-gradient);
+	background-size: 200%, 1px;
 }
 .ul-li ul {
 	margin: 0;
@@ -337,6 +340,64 @@ select:visited {
 		}
 	}
 }
+.ag-section-title-2 {
+	.subtitle {
+		color: #ff3838;
+		font-size: 16px;
+		padding-left: 32px;
+		margin-bottom: 8px;
+		position: relative;
+		font-family: var(--ag-heading);
+		&:before {
+			left: 0;
+			top: 12px;
+			height: 2px;
+			width: 26px;
+			content: '';
+			position: absolute;
+			background-color: var(--ag-title-color);
+		}
+		i {
+			left: 0;
+			top: 6px;
+			width: 14px;
+			height: 14px;
+			position: absolute;
+			border-radius: 100%;
+			background-color: #fff;
+			border: 3px solid var(--ag-title-color);
+			&:before {
+				top: 2px;
+				right: 2px;
+				width: 4px;
+				content: '';
+				height: 4px;
+				position: absolute;
+				border-radius: 100%;
+				background-color: #ff3838;
+			}
+		}
+	}
+	.sec_title {
+		font-size: 60px;
+		color: var(--ag-title-color);
+		@media #{$lg} {
+			font-size: 56px;
+		}
+		@media #{$md,$sm} {
+			font-size: 45px;
+		}
+		@media #{$xs} {
+			font-size: 38px;
+		}
+		@media #{$xxs} {
+			font-size: 30px;
+		}
+	}
+	p {
+		padding-top: 18px;
+	}
+}
 .ag-btn-1 {
 	a {
 		color: #fff;
@@ -394,7 +455,6 @@ select:visited {
 	transform: translate(-50%, -50%);
 	transition: 0.15s;
 	z-index: 999;
-	// mix-blend-mode: difference;
 
 	@media (max-width: 1200px) {
 		display: none;
