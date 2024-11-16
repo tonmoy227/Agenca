@@ -163,3 +163,252 @@
 		background-color: #354c5e;
 	}
 }
+.hap-gallery-section {
+	overflow: hidden;
+	.ins-slug {
+		font-size: 15px;
+		padding-bottom: 20px;
+		color: var(--ag-title-color);
+		i {
+			font-size: 20px;
+			position: relative;
+			padding-right: 23px;
+			color: var(--ag-title-color);
+			&:after {
+				top: 1px;
+				width: 1px;
+				right: 12px;
+				content: '';
+				height: 17px;
+				position: absolute;
+				background-color: var(--ag-title-color);
+			}
+		}
+	}
+}
+.hap-footer-content {
+	padding: 100px 0px;
+}
+.hap-footer-widget {
+	.widget-title {
+		color: #fff;
+		font-size: 22px;
+		position: relative;
+		display: inline-block;
+		margin-bottom: 38px;
+		&:before {
+			bottom: 0;
+			height: 1px;
+			content: '';
+			width: 100%;
+			position: absolute;
+			background-color: #fff;
+		}
+	}
+	.logo-widget {
+		p {
+			color: #7f7f7f;
+			font-size: 17px;
+			max-width: 340px;
+			padding: 30px 0px 25px;
+		}
+	}
+	.logo-cta {
+		li {
+			color: #fff;
+			font-size: 15px;
+			font-weight: 700;
+			margin-bottom: 10px;
+			i {
+				width: 20px;
+				margin-right: 8px;
+				display: inline-block;
+				@extend%gradient-text;
+			}
+		}
+	}
+	.hap-contact-social {
+		margin-top: 25px;
+		a {
+			color: #fff;
+			font-size: 16px;
+			font-weight: 800;
+			margin-right: 25px;
+			&:hover {
+				color: var(--ag-color-1);
+			}
+			i {
+				margin-right: 8px;
+			}
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+	}
+	.menu-widget {
+		padding-left: 20px;
+		li {
+			position: relative;
+			margin-bottom: 8px;
+			padding-bottom: 8px;
+			border-bottom: 1px solid #2b2b2b;
+			&:last-child {
+				border: none;
+				margin-bottom: 0;
+				padding-bottom: 0;
+			}
+			a {
+				color: #e6eedd;
+				font-size: 16px;
+				font-weight: 600;
+				&:hover {
+					color: var(--ag-color-1);
+				}
+			}
+		}
+	}
+	.newslatter-widget {
+		padding-left: 10px;
+		p {
+			color: #7f7f7f;
+			font-size: 15px;
+			padding-bottom: 18px;
+		}
+		form {
+			position: relative;
+			input {
+				width: 100%;
+				height: 64px;
+				border: none;
+				padding-left: 20px;
+				border-radius: 30px;
+				background-color: #262626;
+				&::placeholder {
+					font-size: 14px;
+					color: #7f7f7f;
+				}
+			}
+			button {
+				top: 7px;
+				right: 7px;
+				color: #fff;
+				width: 66px;
+				height: 53px;
+				border: none;
+				position: absolute;
+				border-radius: 30px;
+				background: var(--ag-gradient);
+				background-size: 200%, 1px;
+			}
+		}
+	}
+	.tranding-service {
+		margin-top: 25px;
+		h4 {
+			color: #fff;
+			font-size: 20px;
+			padding-bottom: 10px;
+		}
+		ul {
+			display: flex;
+			overflow: hidden;
+			border-radius: 30px;
+		}
+		li {
+			a {
+				width: 100px;
+				height: 100px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+			&:nth-child(1) {
+				a {
+					background-color: #ab003a;
+				}
+			}
+			&:nth-child(2) {
+				a {
+					background-color: #d44823;
+				}
+			}
+			&:nth-child(3) {
+				a {
+					background-color: #ffc107;
+				}
+			}
+			&:nth-child(4) {
+				a {
+					background-color: #5adafd;
+				}
+			}
+		}
+	}
+}
+.ag-footer-card {
+	gap: 30px 120px;
+	.ag-f-card-title {
+		max-width: 230px;
+		span {
+			font-size: 14px;
+			display: inline-block;
+			font-family: var(--ag-heading);
+			@extend%gradient-text;
+		}
+		h3 {
+			color: #fff;
+			font-size: 35px;
+		}
+	}
+}
+.ag-f-item-area {
+	gap: 30px 25px
+}
+.ag-f-card-item {
+	gap: 20px;
+	padding: 50px 45px;
+	border-radius: 20px;
+	background-color: #000000;
+	.item-circle {
+		width: 88px;
+		height: 88px;
+		border-radius: 100%;
+		background: var(--ag-gradient);
+		background-size: 200%, 1px;
+		span,p {
+			color: #fff;
+			line-height: 1;
+			text-align: center;
+		}
+		span {
+			font-size: 19px;
+			font-weight: 800;
+		}
+		p {
+			font-size: 13px;
+			font-weight: 500;
+		}
+	}
+	.item-text {
+		max-width: 215px;
+		span {
+			color: #fff;
+			display: block;
+			font-size: 23px;
+			font-weight: 800;
+			padding-bottom: 5px;
+		}
+		p {
+			line-height: 1;
+			font-size: 16px;
+			font-weight: 300;
+			@extend%gradient-text;
+		}
+	}
+}
+.hap-footer-copyright {
+	color: #fff;
+	font-size: 15px;
+	padding: 10px 15px;
+	background-color: #151515;
+}

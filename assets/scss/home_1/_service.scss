@@ -145,8 +145,8 @@
 		overflow: hidden;
 		position: relative;
 		border-radius: 100%;
-		transform: translateX(200px) scale(0.7);
-		transition: all 500ms ease-in-out;
+		transform: translateX(100%) scale(0.3);
+		transition: all 900ms ease-in-out;
 		transform-origin: left;
 		transition-delay: 0s;
 		img {
@@ -233,7 +233,7 @@
 .ag-service-tab-desc .tab-pane:is(.show) {
 	.ag-s-img-text-1 {
 		.item-img { 
-			transform: translateX(0px) scale(1);
+			transform: translateX(0) scale(1);
 		}
 	}
 }

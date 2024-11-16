@@ -1,0 +1,147 @@
+.ag-why-choose-us-section {
+	background-color: #f4f1ea;
+}
+.ag-wc-content {
+	gap: 30px 40px;
+	@media #{$lg,$md,$sm,$xs} {
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+}
+.ag-wc-img-wrap {
+	width: 680px;
+	height: 645px;
+	@media #{$xxs} {
+		height: auto;
+	}
+	.ag-wc-img-list {
+		li {
+			overflow: hidden;
+			position: absolute;
+			border-radius: 100%;
+			@media #{$sm,$xs} {
+				height: 100px !important;
+				width: 100px !important;
+			}
+			@media #{$xxs} {
+				display: none;
+			}
+			&:nth-child(1) {
+				top: 0%;
+				left: 15%;
+				width: 125px;
+				height: 125px;
+			}
+			&:nth-child(2) {
+				top: 30%;
+				left: 10%;
+				width: 92px;
+				height: 92px;
+			}
+			&:nth-child(3) {
+				top: 35%;
+				left: 40%;
+				width: 120px;
+				height: 120px;
+			}
+			&:nth-child(4) {
+				top: 10%;
+				right: 5%;
+				width: 180px;
+				height: 180px;
+			}
+			&:nth-child(5) {
+				left: 5%;
+				bottom: 5%;
+				width: 210px;
+				height: 210px;
+			}
+			&:nth-child(6) {
+				right: 5%;
+				bottom: 5%;
+				width: 170px;
+				height: 170px;
+			}
+		}
+	}
+}
+.ag-wc-circle {
+	@media #{$xxs} {
+		display: none;
+	}
+	li {
+		position: absolute;
+		border-radius: 100%;
+		&:nth-child(1) {
+			top: 12%;
+			left: 35%;
+			width: 70px;
+			height: 70px;
+			background-color: #fff;
+		}
+		&:nth-child(2) {
+			right: 0%;
+			width: 25px;
+			bottom: 50%;
+			height: 25px;
+			background-color: #43baff;
+		}
+		&:nth-child(3) {
+			left: 0%;
+			width: 25px;
+			bottom: 30%;
+			height: 25px;
+			background-color: #43baff;
+		}
+		&:nth-child(4) {
+			left: 50%;
+			width: 58px;
+			bottom: 10%;
+			height: 58px;
+			background-color: #fff;
+		}
+		&:nth-child(5) {
+			top: 40%;
+			right: 30%;
+			width: 12px;
+			height: 12px;
+			background-color: #7141b1;
+		}
+	}
+}
+.ag-wc-text-wrap {
+	max-width: 535px;
+	@media #{$lg,$md,$sm,$xs} {
+		margin: 0 auto;
+		max-width: 680px;
+	}
+}
+.ag-wc-counter {
+	gap: 30px;
+	max-width: 420px;
+}
+.ag-wc-count-item {
+	h3 {
+		font-size: 90px;
+		color: var(--ag-title-color);
+		@media #{$lg} {
+			font-size: 70px;
+		}
+		@media #{$md,$sm} {
+			font-size: 55px;
+		}
+		@media #{$xs} {
+			font-size: 45px;
+		}
+		@media #{$xxs} {
+			font-size: 40px;
+		}
+	}
+	p {
+		font-size: 20px;
+		font-weight: 800;
+		max-width: 170px;
+		line-height: 1.2;
+		color: var(--ag-title-color);
+	}
+}

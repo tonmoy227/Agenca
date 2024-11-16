@@ -10,19 +10,25 @@ Last change:    00/00/00
 
 	"use strict";
 
-	// Scrolljng
-	const lenis = new Lenis({
-		duration: 1,
-		easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-		direction: 'vertical',
-		smooth: true,
-		smoothTouch: false,
+	gsap.config({
+		nullTargetWarn: false,
 	});
+
+// lenis-smooth-scroll
+	const lenis = new Lenis({
+		duration: .6, 
+		easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), 
+		direction: 'vertical', 
+		smooth: true, 
+		smoothTouch: false, 
+	});
+
 	function raf(time) {
 		lenis.raf(time);
 		requestAnimationFrame(raf);
 	}
 	requestAnimationFrame(raf);
+
 
 	document.addEventListener("mousemove", function e(t) {
 		try {
@@ -319,6 +325,59 @@ Last change:    00/00/00
 			});
 		});
 	}
+	let price1 = new Swiper('.chy_price_1_active', {
+		loop: true,
+		spaceBetween: 0,
+		speed: 800,
+		rtl: false,
+		slidesPerView: 1,
+		effect: 'fade',
+		// autoplay: {
+		// 	delay: 5000,
+		// },
+		fadeEffect: {
+			crossFade: true
+		},
+		pagination: {
+			el: ".chy-price-1-pagination",
+			clickable: true
+		},
+		navigation: {
+			nextEl: ".chy_price_1_next",
+			prevEl: ".chy_price_1_prev",
+		},
+	});
+	var slider = new Swiper('.hap-gallery-slide', {
+		slidesPerView: 7,
+		spaceBetween: 0,
+		loop: true,
+		autoplay: {
+			enabled: true,
+			delay: 6000
+		},
+		speed: 500,
+
+		breakpoints: {
+			'1600': {
+				slidesPerView: 7,
+			},
+			'1200': {
+				slidesPerView: 5,
+			},
+			'992': {
+				slidesPerView: 4,
+			},
+			'768': {
+				slidesPerView: 3,
+			},
+			'576': {
+				slidesPerView: 2,
+			},
+			'0': {
+				slidesPerView: 2,
+			},
+		},
+	});
 	// Card Active
 
 	const active_card = gsap.utils.toArray('.txt_item_active');
@@ -345,7 +404,7 @@ Last change:    00/00/00
 					markers: false,
 					pin: true,
 					pinSpacing: false,
-					start: "top top",
+					start: "top 0%",
 					end: "bottom +=200",
 					onEnter: () => {
 						setTimeout(() => {
@@ -356,6 +415,89 @@ Last change:    00/00/00
 			});
 		});
 	}
+	gsap.utils.toArray('.chy-zoomout').forEach((el, index) => { 
+		let tl6 = gsap.timeline({
+			scrollTrigger: {
+				trigger: el,
+				scrub: 1,
+				start: "top 85%",
+				end: "buttom 60%",
+				toggleActions: "play none none reverse",
+				markers: false
+			}
+		})
+
+		tl6
+		.set(el, {transformOrigin: 'center center'})
+		.fromTo(el, { scale: 1}, { scale: 0, duration: 1, immediateRender: false})
+	})
+	gsap.utils.toArray('.ag-testimonial-content-2').forEach((el, index) => { 
+		let AgTest = gsap.timeline({
+			scrollTrigger: {
+				trigger: ".ag-testimonial-content-2",
+				scrub: 6,
+				start: "top 20%",
+				end: "bottom 20%",
+				toggleActions: "play none none reverse", 
+				markers: false
+			}
+		})
+
+		AgTest
+		.set(el, {transformOrigin: 'top bottom'})
+		.fromTo(el, { xPercent: 0 }, { xPercent: -100 , duration: 30, immediateRender: false})
+	});
+	if (window.matchMedia("(min-width: 1200px)").matches) { 
+		var TestPin = document.querySelectorAll(".ag-testimonial-section-2")
+		TestPin.forEach((item) => {
+			gsap.to(item, {
+				scrollTrigger: {
+					trigger: item,
+					markers: false,
+					pin: true,
+					scrub: 1,
+					start: "top top",
+					end: "-=200"
+				},
+			});
+		});
+	}
+	var slider = new Swiper('.hap-team-slider', {
+		spaceBetween: 30,
+		slidesPerView: 3,
+		loop: true,
+		speed: 1000,
+		navigation: {
+			nextEl: ".hap-team-button-next",
+			prevEl: ".hap-team-button-prev",
+		},
+		breakpoints: {
+			'1600': {
+				slidesPerView: 3,
+			},
+			'1500': {
+				slidesPerView: 3,
+			},
+			'1400': {
+				slidesPerView: 3,
+			},
+			'1300': {
+				slidesPerView: 3,
+			},
+			'992': {
+				slidesPerView: 2,
+			},
+			'768': {
+				slidesPerView: 1,
+			},
+			'576': {
+				slidesPerView: 1,
+			},
+			'0': {
+				slidesPerView: 1,
+			},
+		},
+	});
 	// TItie Animation
 	window.onload = function () {
 		const st = $(".txa-split-text");

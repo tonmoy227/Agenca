@@ -1,0 +1,22 @@
+.ag-counter-content-2 {
+	gap: 30px 85px;
+	h2 {
+		font-size: 50px;
+		max-width: 420px;
+		color: var(--ag-title-color);
+	}
+}
+.ag-counter-item-wrap {
+	gap: 30px 85px;
+}
+.ag-counter-item-2 {
+	h3 {
+		line-height: 1;
+		font-size: 90px;
+		padding-bottom: 5px;
+		color: var(--ag-title-color);
+	}
+	p {
+		font-size: 20px;
+	}
+}

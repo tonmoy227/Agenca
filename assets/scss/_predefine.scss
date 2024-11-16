@@ -347,6 +347,7 @@ select:visited {
 		padding-left: 32px;
 		margin-bottom: 8px;
 		position: relative;
+		display: inline-block;
 		font-family: var(--ag-heading);
 		&:before {
 			left: 0;
@@ -396,6 +397,10 @@ select:visited {
 	}
 	p {
 		padding-top: 18px;
+	}
+	&.text-center {
+		margin: 0 auto;
+		max-width: 600px;
 	}
 }
 .ag-btn-1 {

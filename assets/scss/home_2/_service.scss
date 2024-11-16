@@ -1,5 +1,27 @@
 .ag-service-section-2 {
 	z-index: 1;
+	@media #{$lg,$md,$sm,$xs} {
+		max-height: 100%;
+		padding-top: 60px;
+		padding-bottom: 50px;
+	}
+	&:after {
+		left: 0;
+		right: 0;
+		bottom: 0;
+		height: 1px;
+		content: '';
+		width: 100%;
+		margin: 0 auto;
+		max-width: 1250px;
+		position: absolute;
+		background-color: #eae8e4;
+	}
+}
+.ag-service-content-2 {
+	gap: 30px 80px;
+	position: relative;
+	align-items: flex-start;
 	&:before {
 		top: 0;
 		left: 0;
@@ -10,17 +32,45 @@
 		max-height: 645px;
 		position: absolute;
 		background-color: #f6f5f3;
+		@media #{$lg,$md,$sm,$xs} {
+			max-height: 100%;
+		}
 	}
-	.ag-s-side {
-		top: 0;
-		left: 0;
+	@media #{$xxl,$xl} {
+		gap: 30px;
 	}
-}
-.ag-service-content-2 {
-	gap: 30px 80px;
+	@media #{$lg,$md,$sm,$xs} {
+		flex-wrap: wrap;
+		justify-content: center;
+	}
 }
 .ag-s-text-wrap-2 {
-	max-width: 625px;
+	width: 100%;
+	overflow: hidden;
+	max-width: 50%;
+	@media #{$lg,$md,$sm,$xs} {
+		max-width: 100%;
+		padding: 0px 15px;
+		justify-content: center  !important;
+	}
+	.ag-s-side {
+		width: 100%;
+		overflow: hidden;
+		max-height: 907px;
+		margin-right: 50px;
+		@media #{$lg,$md,$sm,$xs} {
+			margin-right: 0;
+		}
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			border-bottom-right-radius: 10px;
+			@media #{$lg,$md,$sm,$xs} {
+				border-radius: 10px;
+			}
+		}
+	}
 	ul {
 		margin-top: 25px;
 		li {
@@ -30,15 +80,34 @@
 			color: var(--ag-title-color);
 		}
 	}
+	.ag-s-text-wrapper {
+		max-width: 620px;
+		@media #{$xl} {
+			padding-left: 15px;
+		}
+		@media #{$lg,$md,$sm,$xs} {
+			max-width: 100%;
+		}
+	}
 }
 .ag-s-item-wrap-2 {
 	max-width: 555px;
+	@media #{$xl} {
+		padding-top: 60px;
+	}
+	@media #{$lg,$md,$sm,$xs} {
+		padding: 15px;
+		max-width: 100%;
+	}
 }
 .ag-s-item-2 {
 	padding: 65px 50px;
 	border-radius: 15px;
 	margin-bottom: 32px;
 	background-color: #eae8e4;
+	@media #{$xxs} {
+		padding: 40px 30px;
+	}
 	.item-icon {
 		margin-bottom: 25px;
 	}
@@ -47,6 +116,9 @@
 			font-size: 32px;
 			padding-bottom: 8px;
 			color: var(--ag-title-color);
+			@media #{$xxs} {
+				font-size: 26px;
+			}
 		}
 		p {
 			padding-bottom: 14px;
