@@ -1,3 +1,13 @@
+@keyframes floating {
+	from {
+		-webkit-transform: rotate(0deg) translate(-10px) rotate(0deg);
+		transform: rotate(0deg) translate(-10px) rotate(0deg);
+	}
+	to {
+		-webkit-transform: rotate(360deg) translate(-10px) rotate(-360deg);
+		transform: rotate(360deg) translate(-10px) rotate(-360deg);
+	}
+}
 .ag-why-choose-us-section {
 	background-color: #f4f1ea;
 }
@@ -19,6 +29,16 @@
 			overflow: hidden;
 			position: absolute;
 			border-radius: 100%;
+			animation-name: floating;
+			-webkit-animation-name: floating;
+			animation-iteration-count: infinite;
+			-webkit-animation-iteration-count: infinite;
+			-webkit-animation-timing-function: linear;
+			animation-timing-function: linear;
+			-webkit-transform-origin: 50% 1px;
+			transform-origin: 50% 1px;
+			-webkit-transition: all 2s ease;
+			transition: all 2s ease;
 			@media #{$sm,$xs} {
 				height: 100px !important;
 				width: 100px !important;
@@ -31,36 +51,60 @@
 				left: 15%;
 				width: 125px;
 				height: 125px;
+				animation-duration: 10s;
+				-webkit-animation-duration: 10s;
+				-webkit-transition-delay: 0.6s;
+				transition-delay: 0.6s;
 			}
 			&:nth-child(2) {
 				top: 30%;
 				left: 10%;
 				width: 92px;
 				height: 92px;
+				animation-duration: 12s;
+				-webkit-animation-duration: 12s;
+				-webkit-transition-delay: 0s;
+				transition-delay: 0s;
 			}
 			&:nth-child(3) {
 				top: 35%;
 				left: 40%;
 				width: 120px;
 				height: 120px;
+				animation-duration: 11s;
+				-webkit-animation-duration: 11s;
+				-webkit-transition-delay: 0.6s;
+				transition-delay: 0.6s;
 			}
 			&:nth-child(4) {
 				top: 10%;
 				right: 5%;
 				width: 180px;
 				height: 180px;
+				animation-duration: 6s;
+				-webkit-animation-duration: 6s;
+				-webkit-transition-delay: 0.2s;
+				transition-delay: 0.2s;
 			}
 			&:nth-child(5) {
 				left: 5%;
 				bottom: 5%;
 				width: 210px;
 				height: 210px;
+				animation-duration: 7s;
+				-webkit-animation-duration: 7s;
+				-webkit-transition-delay: 0.7s;
+				transition-delay: 0.7s;
 			}
 			&:nth-child(6) {
 				right: 5%;
 				bottom: 5%;
 				width: 170px;
 				height: 170px;
+				animation-duration: 5s;
+				-webkit-animation-duration: 5s;
+				-webkit-transition-delay: 0.1s;
+				transition-delay: 0.1s;
 			}
 		}
 	}
@@ -72,12 +116,26 @@
 	li {
 		position: absolute;
 		border-radius: 100%;
+		animation-name: floating;
+		-webkit-animation-name: floating;
+		animation-iteration-count: infinite;
+		-webkit-animation-iteration-count: infinite;
+		-webkit-animation-timing-function: linear;
+		animation-timing-function: linear;
+		-webkit-transform-origin: 50% 1px;
+		transform-origin: 50% 1px;
+		-webkit-transition: all 2s ease;
+		transition: all 2s ease;
 		&:nth-child(1) {
 			top: 12%;
 			left: 35%;
 			width: 70px;
 			height: 70px;
 			background-color: #fff;
+			animation-duration: 5s;
+			-webkit-animation-duration: 5s;
+			-webkit-transition-delay: 0.1s;
+			transition-delay: 0.1s;
 		}
 		&:nth-child(2) {
 			right: 0%;
@@ -85,6 +143,10 @@
 			bottom: 50%;
 			height: 25px;
 			background-color: #43baff;
+			animation-duration: 7s;
+			-webkit-animation-duration: 7s;
+			-webkit-transition-delay: 0.7s;
+			transition-delay: 0.7s;
 		}
 		&:nth-child(3) {
 			left: 0%;
@@ -92,6 +154,10 @@
 			bottom: 30%;
 			height: 25px;
 			background-color: #43baff;
+			animation-duration: 6s;
+			-webkit-animation-duration: 6s;
+			-webkit-transition-delay: 0.2s;
+			transition-delay: 0.2s;
 		}
 		&:nth-child(4) {
 			left: 50%;
@@ -99,6 +165,10 @@
 			bottom: 10%;
 			height: 58px;
 			background-color: #fff;
+			animation-duration: 11s;
+			-webkit-animation-duration: 11s;
+			-webkit-transition-delay: 0.6s;
+			transition-delay: 0.6s;
 		}
 		&:nth-child(5) {
 			top: 40%;
@@ -106,6 +176,10 @@
 			width: 12px;
 			height: 12px;
 			background-color: #7141b1;
+			animation-duration: 5s;
+			-webkit-animation-duration: 5s;
+			-webkit-transition-delay: 0.1s;
+			transition-delay: 0.1s;
 		}
 	}
 }

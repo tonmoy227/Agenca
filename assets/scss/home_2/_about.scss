@@ -1,3 +1,9 @@
+.ag-about-section-2 {
+	@media #{$xxs} {
+		padding-top: 80px;
+		padding-bottom: 60px;
+	}
+}
 .ag-about-content-2 {
 	gap: 30px 45px;
 	@media #{$lg,$md,$sm,$xs} {

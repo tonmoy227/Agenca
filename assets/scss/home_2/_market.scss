@@ -68,6 +68,12 @@
 		h3 {
 			font-size: 40px;
 			color: var(--ag-title-color);
+			@media #{$md,$sm,$xs} {
+				font-size: 35px;
+			}
+			@media #{$xxs} {
+				font-size: 30px;
+			}
 		}
 		ul {
 			margin-top: 25px;

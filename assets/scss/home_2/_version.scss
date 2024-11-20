@@ -1,3 +1,27 @@
+.ag-version-section-2 {
+	.section-bg {
+		top: 0;
+		left: 0;
+		z-index: -1;
+		width: 200%;
+		height: 100%;
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+	&.ver_2 {
+		.ag-section-title {
+			.sec_title {
+				color: #fff;
+			}
+			p {
+				color: #fff;
+			}
+		}
+	}
+}
 .ag-version-content-2 {
 	ul {
 		gap: 25px;

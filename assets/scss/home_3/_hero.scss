@@ -1,0 +1,68 @@
+ .ag-hero-content-3 {
+ 	padding-top: 270px;
+ 	@media #{$md,$sm} {
+ 		padding-top: 200px;
+ 	}
+ 	@media #{$xs} {
+ 		padding-top: 180px;
+ 	}
+ 	@media #{$xxs} {
+ 		padding-top: 150px;
+ 	}
+ 	.ag-section-title {
+ 		max-width: 905px;
+ 		.sec_title {
+ 			font-size: 90px;
+ 			@media #{$md,$sm} {
+ 				font-size: 70px;
+ 			}
+ 			@media #{$xs} {
+ 				font-size: 55px;
+ 			}
+ 			@media #{$xxs} {
+ 				font-size: 45px;
+ 			}
+ 			@media #{$xxxs} {
+ 				font-size: 40px;
+ 			}
+ 		}
+ 	}
+ 	.ag-hero-search {
+ 		width: 100%;
+ 		margin: 0 auto;
+ 		max-width: 660px;
+ 		margin-top: 25px;
+ 		form {
+ 			position: relative;
+ 			@media #{$xxs} {
+ 				text-align: center;
+ 			}
+ 		}
+ 		input {
+ 			width: 100%;
+ 			height: 76px;
+ 			border: none;
+ 			padding-left: 40px;
+ 			border-radius: 50px;
+ 			background-color: #f7f7f7;
+ 		}
+ 		button {
+ 			top: 8px;
+ 			right: 8px;
+ 			color: #fff;
+ 			border: none;
+ 			font-size: 18px;
+ 			font-weight: 800;
+ 			padding: 16px 30px;
+ 			position: absolute;
+ 			white-space: nowrap;
+ 			border-radius: 50px;
+ 			background: var(--ag-gradient);
+ 			background-size: 200%, 1px;
+ 			@media #{$xxs} {
+ 				margin-top: 15px;
+ 				position: static;
+ 			}
+ 		}
+ 	}
+ }

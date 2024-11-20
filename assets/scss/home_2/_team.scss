@@ -110,6 +110,11 @@
 	}
 }
 .hap-carousel-arrow-next-prev {
+	@media #{$xl,$lg,$md,$sm,$xs} { 
+		gap: 15px;
+		margin-top: 30px;
+		justify-content: center;
+	}
 	.hap-slider-arrow {
 		z-index: 1;
 		top: 50%;
@@ -128,6 +133,9 @@
 			position: absolute;
 			background-color: #fff;
 			transition: all 500ms ease;
+			@media #{$xl,$lg,$md,$sm,$xs} { 
+				display: none;
+			}
 		}
 		&:after {
 			transform: scale(0);
@@ -138,6 +146,9 @@
 			color: #fff;
 			&:after {
 				transform: scale(1.0);
+			}
+			@media #{$xl,$lg,$md,$sm,$xs} { 
+				color: var(--ag-color-1);
 			}
 		}
 		&.hap-team-button-prev {
@@ -158,9 +169,15 @@
 	.hap-carousel-arrow-next-prev {
 		.hap-team-button-prev {
 			left: -70px;
+			@media #{$xl,$lg,$md,$sm,$xs} {
+				position: static !important;
+			}
 		}
 		.hap-team-button-next {
 			right: -70px;
+			@media #{$xl,$lg,$md,$sm,$xs} {
+				position: static !important;
+			}
 		}
 	}
 }

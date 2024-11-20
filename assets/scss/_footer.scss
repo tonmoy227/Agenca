@@ -187,6 +187,7 @@
 	}
 }
 .hap-footer-content {
+	overflow: hidden;
 	padding: 100px 0px;
 }
 .hap-footer-widget {
@@ -315,12 +316,14 @@
 			border-radius: 30px;
 		}
 		li {
+			width: 25%;
 			a {
-				width: 100px;
+				width: 100%;
 				height: 100px;
 				display: flex;
 				align-items: center;
 				justify-content: center;
+				
 			}
 			&:nth-child(1) {
 				a {
@@ -346,7 +349,10 @@
 	}
 }
 .ag-footer-card {
-	gap: 30px 120px;
+	gap: 30px 30px;
+	@media #{$lg,$md,$sm,$xs} {
+		flex-wrap: wrap;
+	}
 	.ag-f-card-title {
 		max-width: 230px;
 		span {
@@ -362,13 +368,19 @@
 	}
 }
 .ag-f-item-area {
-	gap: 30px 25px
+	gap: 30px 25px;
+	@media #{$md,$sm,$xs} {
+		flex-wrap: wrap;
+	}
 }
 .ag-f-card-item {
 	gap: 20px;
 	padding: 50px 45px;
 	border-radius: 20px;
 	background-color: #000000;
+	@media #{$xxs} {
+		flex-wrap: wrap;
+	}
 	.item-circle {
 		width: 88px;
 		height: 88px;

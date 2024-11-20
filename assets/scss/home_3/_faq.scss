@@ -1,0 +1,122 @@
+.ag-faq-top-content {
+	gap: 30px;
+	.ag-section-title {
+		max-width: 475px;
+		.sec_title {
+			font-size: 50px;
+			@media #{$md,$sm} {
+				font-size: 45px;
+			}
+			@media #{$xs} {
+				font-size: 38px;
+			}
+			@media #{$xxs} {
+				font-size: 30px;
+			}
+		}
+	}
+	.top-text {
+		max-width: 515px;
+	}
+}
+.mt-faq-accordion {
+	width: 100%;
+	max-width: 725px;
+	.accordion-item,
+	.accordion-button:not(.collapsed),
+	.accordion-button {
+		background-color: transparent;
+		box-shadow: none;
+	}
+	.accordion-item {
+		z-index: 1;
+		border:  none;
+		overflow: hidden;
+		margin-bottom: 20px;
+		position: relative;
+		border-radius: 10px;
+		padding-bottom: 28px;
+		background-color: #f4fcf8;
+		&:before {
+			top: 0;
+			left: 0;
+			z-index: -1;
+			width: 100%;
+			height: 0%;
+			content: '';
+			position: absolute;
+			background: var(--ag-gradient);
+			transition: all 700ms ease;
+			background-size: 200%, 1px;
+		}
+		&.faq_active {
+			&:before {
+				height: 100%;
+			}
+		}
+	}
+	.accordion-button {
+		padding: 0;
+		border: none;
+		font-size: 25px;
+		font-weight: 800;
+		position: relative;
+		padding: 50px 50px 15px;
+		transition: all 500ms ease;
+		color: var(--ag-title-color);
+		span {
+			display: flex;
+			max-width: 85%;
+			align-items: center;
+			justify-content: center;
+		}
+	}
+	.accordion-button:focus {
+		border: none;
+		box-shadow: none;
+	}
+	.accordion-body {
+		padding: 0;
+		color: #fff;
+		font-size: 18px;
+		line-height: 1.6;
+		padding: 0px 50px 20px;
+		a {
+			display: block;
+			font-weight: 700;
+			margin-top: 10px;
+			color: var(--ag-title-color);
+			i {
+				font-size: 14px;
+				transform: rotate(-45deg);
+			}
+		}
+	}
+	.accordion-button::after {
+		top: 50px;
+		right: 40px;
+		width: 32px;
+		height: 32px;
+		display: flex;
+		font-size: 20px;
+		content: '\f358';
+		font-weight: 900;
+		position: absolute;
+		align-items: center;
+		border-radius: 100%;
+		background-image: none;
+		justify-content: center;
+		transition: all 300ms ease;
+		font-family: 'Font Awesome 5 free';
+		@media #{$xxs} {
+			right: 15px;
+		}
+	}
+	.accordion-button:not(.collapsed) { 
+		color: #fff;
+		&:after {
+			top: 25px;
+			transform: rotate(180deg);
+		}
+	}
+} 

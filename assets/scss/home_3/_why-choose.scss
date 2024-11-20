@@ -1,0 +1,129 @@
+.ag-wc-top-content {
+	gap: 30px;
+	.ag-section-title {
+		max-width: 470px;
+		.sec_title {
+			font-size: 50px;
+			@media #{$md,$sm} {
+				font-size: 45px;
+			}
+			@media #{$xs} {
+				font-size: 38px;
+			}
+			@media #{$xxs} {
+				font-size: 30px;
+			}
+		}
+	}
+	.top-text {
+		max-width: 615px;
+	}
+	@media #{$md,$xs} {
+		justify-content: center !important;
+		text-align: center;
+	}
+}
+.ag-wc-content-2 {
+	gap: 30px 40px;
+	@media #{$lg,$md,$xs} {
+		gap: 30px 20px;
+	}
+	@media #{$md,$xs} {
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+}
+.ag-wc-item-1 {
+	width: 100%;
+	max-width: 440px;
+	border-radius: 10px;
+	background: var(--ag-gradient);
+	background-size: 200%, 1px;
+	@media #{$lg,$md,$xs} {
+		max-width: 350px;
+	}
+	.ag-p-item.popular {
+		margin-bottom: 0;
+		padding: 37px 50px 50px;
+		background-color: transparent;
+		@media #{$lg,$md,$xs} {
+			padding: 37px 30px 50px;
+		}
+		.p-title-value {
+			margin-bottom: 30px;
+			padding-bottom: 38px;
+			border-bottom: 2px solid #fff;
+			h3 {
+				padding-bottom: 8px;
+				span {
+					color: #fff;
+					font-weight: 500;
+					font-family: var(--ag-body-font);
+				}
+			}
+			h4 {
+				font-size: 28px;
+			}
+		}
+		li {
+			margin-bottom: 10px;
+			i {
+				-webkit-text-fill-color: #fff;
+			}
+		}
+		.p-btn {
+			margin-top: 40px;
+			a {
+				background: #070707;
+			}
+		}
+	}
+}
+.ag-wc-item-2 {
+	padding-top: 20px;
+	max-width: 360px;
+	.item-img {
+		padding: 20px;
+		border-radius: 15px;
+		margin-bottom: 30px;
+		border: 2px solid #eaeaea;
+		img {
+			border-radius: 15px;
+		}
+	}
+	.item-text {
+		max-width: 265px;
+		li {
+			color: #e66d32;
+		}
+		h3 {
+			font-size: 32px;
+			padding-top: 10px;
+			padding-bottom: 8px;
+			color: var(--ag-title-color);
+		}
+	}
+}
+.ag-wc-item-3 {
+	padding-top: 20px;
+	ul {
+		margin-bottom: 30px;
+		li {
+			font-weight: 500;
+			margin-bottom: 10px;
+			color: var(--ag-title-color);
+			i {
+				margin-right: 8px;
+				@extend%gradient-text;
+			}
+		}
+	}
+	.item-img {
+		padding: 20px;
+		border-radius: 15px;
+		border: 2px solid #eaeaea;
+		img {
+			border-radius: 15px;
+		}
+	}
+}

@@ -1,3 +1,6 @@
+.ag-answer-section {
+	overflow: hidden;
+}
 .ag-answer-content-area {
 	margin: 0 auto;
 	padding: 0px 15px;
@@ -5,6 +8,10 @@
 }
 .ag-answer-content {
 	gap: 12px;
+	@media #{$lg,$md,$sm,$xs} {
+		flex-wrap: wrap;
+		justify-content: center;
+	}
 }
 .ag-answer-item {
 	width: 230px;
@@ -13,6 +20,9 @@
 	border-radius: 15px;
 	padding: 40px 15px 20px;
 	border: 2px solid #34a853;
+	@media #{$xxs} {
+		width: 100%;
+	}
 	.item-icon {
 		height: 100px;
 		margin-bottom: 30px;
@@ -26,6 +36,12 @@
 		width: 308px;
 		height: 125px;
 		display: flex;
+		@media #{$xl} {
+			width: 250px; 
+		}
+		@media #{$xxs} {
+			width: 100%;
+		}
 	}
 	&.item-2 {
 		border: 2px solid #f1c93c;
@@ -47,12 +63,19 @@
 	}
 }
 .ag-answer-item-wrap {
+	@media #{$lg} {
+		flex-wrap: wrap;
+	}
 	.ag-answer-item {
 		gap: 15px;
 		display: flex;
 		text-align: left;
 		margin-bottom: 15px;
 		padding: 33px 30px 20px;
+		@media #{$xl} {
+			gap: 10px;
+			padding: 33px 15px 20px;
+		}
 		&:last-child {
 			margin-bottom: 0;
 		}
@@ -60,6 +83,10 @@
 			width: 65px;
 			height: 65px;
 			margin-bottom: 0;
+			@media #{$xl} {
+				width: 50px;
+				height: 50px;
+			}
 		}
 	}
 }
