@@ -26,6 +26,9 @@
  				font-size: 40px;
  			}
  		}
+ 		.split-line {
+ 			overflow: hidden;
+ 		}
  	}
  	.ag-hero-search {
  		width: 100%;
@@ -59,9 +62,13 @@
  			border-radius: 50px;
  			background: var(--ag-gradient);
  			background-size: 200%, 1px;
+ 			transition: 500ms var(--cube-1);
  			@media #{$xxs} {
  				margin-top: 15px;
  				position: static;
+ 			}
+ 			&:hover {
+ 				background-position: 120%;
  			}
  		}
  	}

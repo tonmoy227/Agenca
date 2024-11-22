@@ -1,3 +1,28 @@
+@keyframes icon-bounce {
+	0%, 100%, 20%, 50%, 80% {
+		-webkit-transform: translateY(0);
+		transform: translateY(0);
+	}
+	40% {
+		-webkit-transform: translateY(-10px);
+		transform: translateY(-10px);
+	}
+	60% {
+		-webkit-transform: translateY(-5px);
+		transform: translateY(-5px);
+	}
+}
+@keyframes BorderChange {
+	0%, 100%, 20%, 50%, 80% {
+		border: 2px solid #c492ec;
+	}
+	40% {
+		border: 2px solid #78c9da;
+	}
+	60% {
+		border: 2px solid #f0c964;
+	}
+}
 .ag-service-item-3 {
 	margin-bottom: 32px;
 	.item-icon {
@@ -28,12 +53,19 @@
 			}
 		}
 	}
+	&:hover {
+		.item-icon {
+			animation: icon-bounce 1s ease-out infinite;
+		}
+	}
 }
 .ag-service-item-5 {
 	margin-bottom: 32px;
 	border-radius: 15px;
 	padding: 25px 35px 60px;
 	border: 2px solid #c492ec;
+	transition: all 500ms ease;
+	animation: BorderChange  5s ease-out infinite;
 	.item-text {
 		margin-top: 30px;
 		h3 {
@@ -60,12 +92,12 @@
 	.col-lg-4 {
 		&:nth-child(2) {
 			.ag-service-item-5 {
-				border: 2px solid #78c9da;
+				animation: BorderChange  4s ease-out infinite;
 			}
 		}
 		&:nth-child(3) {
 			.ag-service-item-5 {
-				border: 2px solid #f0c964;
+				animation: BorderChange  6s ease-out infinite;
 			}
 		}
 	}

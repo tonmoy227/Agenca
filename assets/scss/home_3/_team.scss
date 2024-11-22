@@ -1,26 +1,73 @@
 .ag-team-section-3 {
 	background-color: #e7f6ea;
 	mask-size: cover;
+	overflow: hidden;
 	mask-repeat: no-repeat;
 	mask-image: url(../img/bg/team-bg.png);
+	.bg-text-area {
+		opacity: 0.33;
+		display: flex;
+		color: #1e3728;
+		font-size: 90px;
+		position: absolute;
+		font-family: var(--ag-heading);
+		span {
+			margin: 0px 56px;
+			&:nth-child(even) {
+				opacity: 0.8;
+				color: #c1d2c6;
+			}
+		}
+		&.ag-team-bg-text-1 {
+			top: 52%;
+		}
+		&.ag-team-bg-text-2 {
+			top: 75%;
+		}
+	}
 }
 .ag-team-item-3 {
 	max-width: 440px;
 	background-color: #fff;
 	transition: all 500ms ease-in-out;
+	@media #{$xs} {
+		margin: 0 auto;
+	}
 	.item-img {
 		text-align: center;
+		a {
+			left: 0;
+			right: 0;
+			bottom: 0;
+			width: 60px;
+			height: 60px;
+			display: flex;
+			margin: 0 auto;
+			position: absolute;
+			align-items: center;
+			border-radius: 100%;
+			justify-content: center;
+			background-color: #c4ef17;
+			transform: rotate(-45deg) scale(0);
+		} 
 	}
 	.item-text {
-		top: 0;
+		top: 30px;
 		width: 100%;
-		display: none;
+		opacity: 0;
 		right: -155px;
 		max-width: 330px;
 		position: absolute;
 		padding: 30px 40px 23px;
 		background: var(--ag-gradient);
 		background-size: 200%, 1px;
+		transition: 700ms var(--cube-1);
+		@media #{$xs} {
+			opacity: 1;
+			width: 100%;
+			max-width: 100%;
+			position: static;
+		}
 		.wel {
 			color: #fff;
 			line-height: 1;
@@ -81,6 +128,9 @@
 }
 .ag-team-slider-3 {
 	height: 492px;
+	@media #{$xs} {
+		height: auto;
+	}
 	.swiper-wrapper {
 		align-items: end;
 	}
@@ -92,14 +142,32 @@
 			height: 250px;
 			overflow: hidden;
 			transition: all 1000ms ease-in-out;
+			@media #{$xs} {
+				width: 100%;
+			}
 		}
 		&.swiper-slide-active {
 			z-index: 3;
+			.item-img { 
+				a {
+					bottom: 35px;
+					transform: rotate(-45deg) scale(1);
+					transition-delay: 600ms;
+				}
+			}
 			.ag-team-item-3 {
 				width: 440px;
 				height: auto;
 				overflow: visible;
 				transform: translateX(-15px);
+				@media #{$xs} {
+					transform: translateX(0);
+				}
+				.item-text {
+					top: 0;
+					opacity: 1;
+					transition-delay: 300ms;
+				}
 
 			}
 		}

@@ -484,6 +484,9 @@ select:visited {
 		display: none;
 	}
 }
+.overflow-hidden {
+	overflow: hidden;
+}
 // txa-common-css-start
 
 @for $i from 1 through 40 {

@@ -1,9 +1,70 @@
+@keyframes pxl_blinds_staggered {
+	0%,25% {
+		background-position: 0 100%
+	}
+
+	75%,100% {
+		background-position: 0 0
+	}
+}
 .ag-port-item-3 {
 	margin: 0 auto;
 	max-width: 602px;
 	margin-bottom: 95px;
+	position: relative;
+	&.visible {
+		&:before {
+			background: repeating-linear-gradient(#868686, #fff 6.25%), -webkit-gradient(linear, left top, left bottom, color-stop(33.3%, #000), color-stop(0, grey), color-stop(66.7%, #fff)) 0 / 100% 305%;
+			background: -o-repeating-linear-gradient(#868686, #fff 6.25%), -o-linear-gradient(#000 33.3%, grey 0, #fff 66.7%) 0 / 100% 305%;
+			background: repeating-linear-gradient(#868686, #fff 6.25%), linear-gradient(#000 33.3%, grey 0, #fff 66.7%) 0 / 100% 305%;
+			background-blend-mode: multiply;
+			background-position: 0 0;
+			-webkit-filter: contrast(999);
+			filter: contrast(999);
+			mix-blend-mode: screen;
+			-webkit-animation: pxl_blinds_staggered 1.5s linear alternate;
+			-khtml-animation: pxl_blinds_staggered 1.5s linear alternate;
+			-moz-animation: pxl_blinds_staggered 1.5s linear alternate;
+			-ms-animation: pxl_blinds_staggered 1.5s linear alternate;
+			-o-animation: pxl_blinds_staggered 1.5s linear alternate;
+			animation: pxl_blinds_staggered 1.5s linear alternate;
+		}
+	}
 	@media #{$xs} {
 		margin-bottom: 50px;
+	}
+	.inner-item {
+		position: relative;
+		&:before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			pointer-events: none;
+		}
+	}
+	&.visible {
+		.inner-item {
+			&:before {
+				background: repeating-linear-gradient(#868686, #fff 6.25%), -webkit-gradient(linear, left top, left bottom, color-stop(33.3%, #000), color-stop(0, grey), color-stop(66.7%, #fff)) 0 / 100% 305%;
+				background: -o-repeating-linear-gradient(#868686, #fff 6.25%), -o-linear-gradient(#000 33.3%, grey 0, #fff 66.7%) 0 / 100% 305%;
+				background: repeating-linear-gradient(#868686, #fff 6.25%), linear-gradient(#000 33.3%, grey 0, #fff 66.7%) 0 / 100% 305%;
+				background-blend-mode: multiply;
+				background-position: 0 0;
+				-webkit-filter: contrast(999);
+				filter: contrast(999);
+				mix-blend-mode: screen;
+				border-radius: 15px;
+				-webkit-animation: pxl_blinds_staggered 1.5s linear alternate;
+				-khtml-animation: pxl_blinds_staggered 1.5s linear alternate;
+				-moz-animation: pxl_blinds_staggered 1.5s linear alternate;
+				-ms-animation: pxl_blinds_staggered 1.5s linear alternate;
+				-o-animation: pxl_blinds_staggered 1.5s linear alternate;
+				animation: pxl_blinds_staggered 1.5s linear alternate;
+			}
+		}
 	}
 	.item-img {
 		max-width: 602px;
@@ -45,17 +106,40 @@
 				transform: translateY(0%);
 			}
 			a {
+				z-index: 1;
 				width: 90px;
 				height: 90px;
 				display: flex;
 				font-size: 20px;
 				align-items: center;
 				border-radius: 100%;
+				position: relative;
 				justify-content: center;
 				border: 2px solid var(--ag-title-color);
 				@media #{$xxs} {
 					width: 60px;
 					height: 60px;
+				}
+				&:before {
+					top: 0;
+					left: 0;
+					z-index: -1;
+					width: 100%;
+					height: 100%;
+					content: '';
+					position: absolute;
+					transform: scale(0);
+					border-radius: 100%;
+					background: var(--ag-gradient);
+					background-size: 200%, 1px;
+					transition: all 500ms ease;
+				}
+				&:hover {
+					color: #fff;
+					border: 2px solid transparent;
+					&:before {
+						transform: scale(1);
+					}
 				}
 			}
 		}

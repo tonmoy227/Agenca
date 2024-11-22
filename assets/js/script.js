@@ -73,8 +73,14 @@ Last change:    00/00/00
 			lastScrollTop = windowTop;
 		});
 	}
-
 	TXTheaderSticky();
+	jQuery(window).on('scroll', function() {
+		if (jQuery(window).scrollTop() > 250) {
+			jQuery('.ag-header-section.header_style_three').addClass('sticky-on')
+		} else {
+			jQuery('.ag-header-section.header_style_three').removeClass('sticky-on')
+		}
+	});
 	$('.open_mobile_menu').on("click", function() {
 		$('.mobile_menu_wrap').toggleClass("mobile_menu_on");
 	});
@@ -321,57 +327,6 @@ Last change:    00/00/00
 
 		});
 	}
-	// Hero Title 1
-	if ($('.title_text').length) {
-		gsap.utils.toArray(".title_text").forEach(element => {
-			let timeline = gsap.timeline({
-				scrollTrigger: {
-					trigger: element,
-					start: "top 90%",
-					end: "bottom 60%",
-					scrub: false,
-					markers: false,
-					toggleActions: "play none none none"
-				}
-			});
-			let splitTextInstance = new SplitText(element, { type: "lines" });
-			gsap.set(element, { perspective: 500 });
-			timeline.from(splitTextInstance.lines, {
-				duration: 1,
-				delay: 1,
-				opacity: 0,
-				rotationX: -80,
-				force3D: true,
-				transformOrigin: "top center -70",
-				stagger: 0.1
-			});
-		});
-	}
-	if ($('.title_text_2').length) {
-		gsap.utils.toArray(".title_text_2").forEach(element => {
-			let timeline = gsap.timeline({
-				scrollTrigger: {
-					trigger: element,
-					start: "top 90%",
-					end: "bottom 60%",
-					scrub: false,
-					markers: false,
-					toggleActions: "play none none none"
-				}
-			});
-			let splitTextInstance = new SplitText(element, { type: "words" });
-			gsap.set(element, { perspective: 500 });
-			timeline.from(splitTextInstance.words, {
-				duration: 1,
-				delay: 1,
-				opacity: 0,
-				x: 120,
-				force3D: true,
-				transformOrigin: "top center -70",
-				stagger: 0.1
-			});
-		});
-	}
 	let price1 = new Swiper('.chy_price_1_active', {
 		loop: true,
 		spaceBetween: 0,
@@ -379,9 +334,9 @@ Last change:    00/00/00
 		rtl: false,
 		slidesPerView: 1,
 		effect: 'fade',
-		// autoplay: {
-		// 	delay: 5000,
-		// },
+		autoplay: {
+			delay: 5000,
+		},
 		fadeEffect: {
 			crossFade: true
 		},
@@ -394,6 +349,42 @@ Last change:    00/00/00
 			prevEl: ".chy_price_1_prev",
 		},
 	});
+	var slider = new Swiper('.hap-team-slider', {
+			spaceBetween: 30,
+			slidesPerView: 3,
+			loop: true,
+			speed: 1000,
+			navigation: {
+				nextEl: ".hap-team-button-next",
+				prevEl: ".hap-team-button-prev",
+			},
+			breakpoints: {
+				'1600': {
+					slidesPerView: 3,
+				},
+				'1500': {
+					slidesPerView: 3,
+				},
+				'1400': {
+					slidesPerView: 3,
+				},
+				'1300': {
+					slidesPerView: 3,
+				},
+				'992': {
+					slidesPerView: 2,
+				},
+				'768': {
+					slidesPerView: 1,
+				},
+				'576': {
+					slidesPerView: 1,
+				},
+				'0': {
+					slidesPerView: 1,
+				},
+			},
+		});
 	var slider = new Swiper('.hap-gallery-slide', {
 		slidesPerView: 7,
 		spaceBetween: 0,
@@ -425,6 +416,41 @@ Last change:    00/00/00
 			},
 		},
 	});
+	if($('.ag-team-slider-3').length) {
+		let slider = new Swiper('.ag-team-slider-3', {
+			loop: true,
+			spaceBetween: 48,
+			speed: 700,
+			centeredSlides: true,
+			autoplay: {
+				delay: 5000,
+			},
+			breakpoints: {
+				0: {
+					slidesPerView: 1,
+				},
+				576: {
+					slidesPerView: 1,
+				},
+				768: {
+					slidesPerView: 2,
+				},
+				992: {
+					slidesPerView: 2,
+				},
+				1200: {
+					slidesPerView: 3,
+				},
+				1400: {
+					slidesPerView: 3,
+				},
+				1600: {
+					slidesPerView: 3,
+				},
+			},
+
+		});
+	}
 	// Card Active
 
 	const active_card = gsap.utils.toArray('.txt_item_active');
@@ -497,6 +523,42 @@ Last change:    00/00/00
 		});
 	}
 	if (window.matchMedia("(min-width: 1200px)").matches) { 
+		gsap.utils.toArray('.ag-team-bg-text-1').forEach((el, index) => { 
+			let TeamBg = gsap.timeline({
+				scrollTrigger: {
+					trigger: ".ag-team-section-3",
+					scrub: 6,
+					start: "top 20%",
+					end: "bottom 20%",
+					toggleActions: "play none none reverse", 
+					markers: false
+				}
+			})
+
+			TeamBg
+			.set(el, {transformOrigin: 'top bottom'})
+			.fromTo(el, { x: 0 }, { x: -1920 , duration: 30, immediateRender: false})
+		});
+	}
+	if (window.matchMedia("(min-width: 1200px)").matches) { 
+		gsap.utils.toArray('.ag-team-bg-text-2').forEach((el, index) => { 
+			let TeamBg = gsap.timeline({
+				scrollTrigger: {
+					trigger: ".ag-team-section-3",
+					scrub: 6,
+					start: "top 20%",
+					end: "bottom 20%",
+					toggleActions: "play none none reverse", 
+					markers: false
+				}
+			})
+
+			TeamBg
+			.set(el, {transformOrigin: 'top bottom'})
+			.fromTo(el, { x: -1920 }, { x: -0 , duration: 30, immediateRender: false})
+		});
+	}
+	if (window.matchMedia("(min-width: 1200px)").matches) { 
 		var TestPin = document.querySelectorAll(".ag-testimonial-section-2")
 		TestPin.forEach((item) => {
 			gsap.to(item, {
@@ -511,42 +573,25 @@ Last change:    00/00/00
 			});
 		});
 	}
-	var slider = new Swiper('.hap-team-slider', {
-		spaceBetween: 30,
-		slidesPerView: 3,
-		loop: true,
-		speed: 1000,
-		navigation: {
-			nextEl: ".hap-team-button-next",
-			prevEl: ".hap-team-button-prev",
-		},
-		breakpoints: {
-			'1600': {
-				slidesPerView: 3,
-			},
-			'1500': {
-				slidesPerView: 3,
-			},
-			'1400': {
-				slidesPerView: 3,
-			},
-			'1300': {
-				slidesPerView: 3,
-			},
-			'992': {
-				slidesPerView: 2,
-			},
-			'768': {
-				slidesPerView: 1,
-			},
-			'576': {
-				slidesPerView: 1,
-			},
-			'0': {
-				slidesPerView: 1,
-			},
-		},
-	});
+	function updateVisibility() {
+		const elements = $('.ag-port-item-3');
+		const viewportBottom = $(window).scrollTop() + $(window).height();
+		const viewportTop = $(window).scrollTop();
+
+		elements.each(function() {
+			const element = $(this);
+			const elementTop = element.offset().top;
+			const elementBottom = elementTop + element.outerHeight();
+
+			if (elementTop < viewportBottom && elementBottom > viewportTop) {
+				element.addClass('visible');
+			} else {
+				element.removeClass('visible');
+			}
+		});
+	}
+	$(window).on('scroll resize', updateVisibility);
+	updateVisibility();
 	// TItie Animation
 	window.onload = function () {
 		const st = $(".txa-split-text");
@@ -576,6 +621,14 @@ Last change:    00/00/00
 					ease: "back.out",
 				});
 			}
+			if ($(el).hasClass("banner-title")) {
+				gsap.set(splitTextInstance.words, {
+					opacity: 1,
+					y: 100,
+					scale: .95,
+					ease: "bounce.out",
+				});
+			}
 			el.anim = gsap.to(splitTextInstance.chars, {
 				scrollTrigger: {
 					trigger: el,
@@ -591,7 +644,72 @@ Last change:    00/00/00
 				duration: 0.8,
 				stagger: 0.01,
 			});
+			el.anim = gsap.to(splitTextInstance.words, {
+				scrollTrigger: {
+					trigger: el,
+					start: "top 90%",
+				},
+				x: 0,
+				y: 0,
+
+				color: "inherit",
+				webkitTextStroke: "0px white",
+				scale: 1,
+				opacity: 1,
+				duration: 1,
+				stagger: .2,
+			});
 		});
+		if ($('.title_text').length) {
+			gsap.utils.toArray(".title_text").forEach(element => {
+				let timeline = gsap.timeline({
+					scrollTrigger: {
+						trigger: element,
+						start: "top 90%",
+						end: "bottom 60%",
+						scrub: false,
+						markers: false,
+						toggleActions: "play none none none"
+					}
+				});
+				let splitTextInstance = new SplitText(element, { type: "lines" });
+				gsap.set(element, { perspective: 500 });
+				timeline.from(splitTextInstance.lines, {
+					duration: 1,
+					delay: 1,
+					opacity: 0,
+					rotationX: -80,
+					force3D: true,
+					transformOrigin: "top center -70",
+					stagger: 0.1
+				});
+			});
+		}
+		if ($('.title_text_2').length) {
+			gsap.utils.toArray(".title_text_2").forEach(element => {
+				let timeline = gsap.timeline({
+					scrollTrigger: {
+						trigger: element,
+						start: "top 90%",
+						end: "bottom 60%",
+						scrub: false,
+						markers: false,
+						toggleActions: "play none none none"
+					}
+				});
+				let splitTextInstance = new SplitText(element, { type: "words" });
+				gsap.set(element, { perspective: 500 });
+				timeline.from(splitTextInstance.words, {
+					duration: 1,
+					delay: 1,
+					opacity: 0,
+					x: 120,
+					force3D: true,
+					transformOrigin: "top center -70",
+					stagger: 0.1
+				});
+			});
+		}
 	};
 	gsap.utils.toArray('.appear_top').forEach((el) => { 
 		gsap.fromTo(el, 
@@ -613,7 +731,7 @@ Last change:    00/00/00
 		gsap.fromTo(image, 
 		{ 
 			scale: 1.5, 
-			filter: 'grayscale(1)' 
+			filter: 'grayscale(1)',
 		},
 		{
 			scale: 1,
@@ -626,6 +744,32 @@ Last change:    00/00/00
 			ease: "none",
 		});
 	});
+	let imageBins = gsap.timeline({
+		scrollTrigger: {
+			trigger: ".item-zoom-img",
+			start: "top bottom",
+			markers: false,
+			scrub: 1,
+			end: "bottom center"
+		}
+	})
+	imageBins.to(".item-zoom-img img", {
+		scale: 1.15,
+		duration: 1,
+	});
+	let imageTl = gsap.timeline({
+		scrollTrigger: {
+			trigger: ".ag-video-play-section",
+			start: "top bottom",
+			markers: false,
+			scrub: 1,
+			end: "bottom center"
+		}
+	})
+	imageTl.to(".ag-video-play-section .video-bg img", {
+		scale: 1.15,
+		duration: 1,
+	})
 	gsap.utils.toArray(".img-anim").forEach(function(container) {
 		let image = container.querySelector("img");
 		gsap.fromTo(image, 
@@ -645,14 +789,14 @@ Last change:    00/00/00
 		});
 	});
 	gsap.utils.toArray(".img-rotate").forEach(function(container) {
-		let image = container.querySelector("img");
+		let image = container.querySelector(".item_select");
 		gsap.fromTo(image, 
 		{ 
 			scale: .5, 
 			rotate: '360deg',
 		},
 		{
-			scale: 1,
+			scale: 1.3,
 			rotate: '0',
 			scrollTrigger: {
 				trigger: container,

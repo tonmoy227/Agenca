@@ -22,11 +22,21 @@
 .mt-faq-accordion {
 	width: 100%;
 	max-width: 725px;
+	@media #{$md,$sm,$xs} {
+		margin-bottom: 35px;
+	}
 	.accordion-item,
 	.accordion-button:not(.collapsed),
 	.accordion-button {
 		background-color: transparent;
 		box-shadow: none;
+	}
+	.accordion {
+		.accordion-item {
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
 	}
 	.accordion-item {
 		z-index: 1;
@@ -64,11 +74,17 @@
 		padding: 50px 50px 15px;
 		transition: all 500ms ease;
 		color: var(--ag-title-color);
+		@media #{$md,$sm,$xs} {
+			padding: 30px 30px 15px;
+		}
 		span {
 			display: flex;
 			max-width: 85%;
 			align-items: center;
 			justify-content: center;
+		}
+		@media #{$xxs} {
+			font-size: 22px;
 		}
 	}
 	.accordion-button:focus {
@@ -81,6 +97,9 @@
 		font-size: 18px;
 		line-height: 1.6;
 		padding: 0px 50px 20px;
+		@media #{$md,$sm,$xs} {
+			padding: 0px 30px 20px;
+		}
 		a {
 			display: block;
 			font-weight: 700;
@@ -120,3 +139,23 @@
 		}
 	}
 } 
+.ag-faq-img-3 {
+	height: 100%;
+	overflow: hidden;
+	transition: all 1000ms ease-in-out;
+	clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+	img {
+		height: 100%;
+		object-fit: cover;
+		border-radius: 15px;
+		transform: scale(1.5);
+		transition: all 700ms ease-in-out;
+	}
+	&.active {
+		clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
+		img {
+			transform: scale(1);
+			transition: all 500ms ease-in-out;
+		}
+	}
+}

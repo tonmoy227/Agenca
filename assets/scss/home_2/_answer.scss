@@ -1,6 +1,12 @@
 .ag-answer-section {
 	overflow: hidden;
 }
+.ag-answer-top-content {
+	gap: 30px;
+	.ag-section-title {
+		max-width: 600px;
+	}
+}
 .ag-answer-content-area {
 	margin: 0 auto;
 	padding: 0px 15px;
