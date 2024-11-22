@@ -233,7 +233,19 @@ select:visited {
 		font-size: 65px;
 		line-height: 1.15;
 		letter-spacing: 1px;
-		color: var(--ag-title-color)
+		color: var(--ag-title-color);
+		@media #{$lg} {
+			font-size: 56px;
+		}
+		@media #{$md,$sm} {
+			font-size: 45px;
+		}
+		@media #{$xs} {
+			font-size: 38px;
+		}
+		@media #{$xxs} {
+			font-size: 30px;
+		}
 	}
 	&.text-center {
 		margin: 0 auto;
@@ -486,6 +498,48 @@ select:visited {
 }
 .overflow-hidden {
 	overflow: hidden;
+}
+.box-shape {
+	span {
+		transition: all 700ms ease-in-out;
+		clip-path: polygon(0 0, 0 0, 0 100%, 0 98%);
+	}
+	&.active {
+		span {
+			clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+			&:nth-child(1) {
+				transition-delay: 200ms;
+			}
+			&:nth-child(2) {
+				transition-delay: 300ms;
+			}
+			&:nth-child(3) {
+				transition-delay: 400ms;
+			}
+
+			&:nth-child(4) {
+				transition-delay: 500ms;
+			}
+			&:nth-child(5) {
+				transition-delay: 600ms;
+			}
+			&:nth-child(6) {
+				transition-delay: 700ms;
+			}
+			&:nth-child(7) {
+				transition-delay: 800ms;
+			}
+			&:nth-child(8) {
+				transition-delay: 900ms;
+			}
+			&:nth-child(9) {
+				transition-delay: 1000ms;
+			}
+			&:nth-child(10) {
+				transition-delay: 1000ms;
+			}
+		}
+	}
 }
 // txa-common-css-start
 

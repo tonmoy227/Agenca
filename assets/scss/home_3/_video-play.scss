@@ -3,6 +3,9 @@
 	overflow: hidden;
 	mask-repeat: no-repeat;
 	mask-image: url(../img/bg/bg-shape.png);
+	&.ver_2 {
+		mask-image: none;
+	}
 }
 .ag-video-play-content-3 {
 	margin: 0 auto;

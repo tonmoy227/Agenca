@@ -56,10 +56,6 @@
         top: 10px;
       }
 
-      i {
-        font-weight: 400;
-      }
-
       &:hover {
         color: #fff;
         background: #3533FF;
@@ -87,6 +83,7 @@
       transform: translateY(100%);
       transition: all .5s ease-in-out;
       transition-delay: 0s;
+      text-transform: capitalize;
     }
 
     &:is(.active) {

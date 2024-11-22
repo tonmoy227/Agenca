@@ -456,6 +456,31 @@
 	}
 	&.header_style_four {
 		padding-top: 38px;
+		&.sticky-on {
+			top: 0;
+			position: fixed;
+			padding-top: 12px;
+			animation-duration: 1s;
+			animation-fill-mode: both;
+			animation-name: slideInDown;
+			animation-timing-function: ease;
+			transition: .3s all ease-in-out;
+			.ag-header-content {
+				&:before {
+					display: none;
+				}
+			}
+			.header-top {
+				display: none !important;
+			}
+			.search-ofcanvas .off-canvas-btn {
+				border-radius: 12px;
+			}
+			.header-bottom {
+				border: none;
+			}
+		}
+
 		@media #{$xs} {
 			padding-top: 20px;
 		}
@@ -540,7 +565,13 @@
 					span {
 						letter-spacing: -1px;
 						@extend%gradient-text;
+						&:hover {
+							background-position: 120%;
+						}
 					}
+				}
+				&:hover {
+					background-position: 120%;
 				}
 			}
 		}
@@ -560,7 +591,35 @@
 				a {
 					font-size: 16px;
 					font-weight: 600;
+					padding-bottom: 15px;
 					color: var(--ag-title-color);
+				}
+				&.dropdown {
+					&:after {
+						top: 12px;
+						right: 20px;
+						color: var(--ag-title-color);
+						@media #{$lg,$md,$sm,$xs} {
+							right: 12px;
+						}
+					}
+				}
+				.dropdown-menu {
+					top: 46px;
+					background-color: #fff;
+					li {
+						padding: 0;
+						border: none;
+						a {
+							color: var(--ag-title-color);
+						}
+					}
+				}
+				&:hover,
+				&.active {
+					a {
+						color: var(--ag-color-1);
+					}
 				}
 			}
 		}

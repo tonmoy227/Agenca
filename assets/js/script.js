@@ -76,9 +76,9 @@ Last change:    00/00/00
 	TXTheaderSticky();
 	jQuery(window).on('scroll', function() {
 		if (jQuery(window).scrollTop() > 250) {
-			jQuery('.ag-header-section.header_style_three').addClass('sticky-on')
+			jQuery('.ag-header-section.header_style_three, .ag-header-section.header_style_four').addClass('sticky-on')
 		} else {
-			jQuery('.ag-header-section.header_style_three').removeClass('sticky-on')
+			jQuery('.ag-header-section.header_style_three, .ag-header-section.header_style_four').removeClass('sticky-on')
 		}
 	});
 	$('.open_mobile_menu').on("click", function() {
@@ -102,6 +102,16 @@ Last change:    00/00/00
 		$(this).css('background-image', 'url('+ $(this).attr('data-background') + ')');
 	});
 	gsap.registerPlugin(ScrollTrigger);
+	// offcanvas-start
+	$('.offcanvas_toggle').on('click', function() {
+		$('.overlay, .offcanvas_box_active').addClass('active');
+	});
+
+	$('.overlay, .offcanvas_box_close').on('click', function() {
+		$('.offcanvas_box_active').removeClass('active');
+		$('.overlay').removeClass('active');
+	});
+
 	// search-popup-start
 	$('.search_btn_toggle').on('click', function() {
 		$('.overlay, .search_box_active').addClass('active');
@@ -145,16 +155,6 @@ Last change:    00/00/00
 		fixedContentPos: false,
 	});
 
-	// Service Item
-	gsap.utils.toArray(".ag-service-item-4").forEach(service_item => {
-		ScrollTrigger.create({
-			trigger: service_item,
-			start: "top 0%", 
-			end: "bottom -1%",  
-			toggleClass: { targets: service_item, className: "active" },
-			markers: false
-		});
-	});
 	// Counter Up Item
 	$('.counter').counterUp({
 		delay: 15,
@@ -251,6 +251,11 @@ Last change:    00/00/00
 	var ltn__active_item = $('.ag-s-item-1')
 	ltn__active_item.mouseover(function() {
 		ltn__active_item.removeClass('active');
+		$(this).addClass('active');
+	});
+	var ltn__active_item_2 = $('.ag-service-item-4')
+	ltn__active_item_2.mouseover(function() {
+		ltn__active_item_2.removeClass('active');
 		$(this).addClass('active');
 	});
 	// Grid Item Active
@@ -350,41 +355,41 @@ Last change:    00/00/00
 		},
 	});
 	var slider = new Swiper('.hap-team-slider', {
-			spaceBetween: 30,
-			slidesPerView: 3,
-			loop: true,
-			speed: 1000,
-			navigation: {
-				nextEl: ".hap-team-button-next",
-				prevEl: ".hap-team-button-prev",
+		spaceBetween: 30,
+		slidesPerView: 3,
+		loop: true,
+		speed: 1000,
+		navigation: {
+			nextEl: ".hap-team-button-next",
+			prevEl: ".hap-team-button-prev",
+		},
+		breakpoints: {
+			'1600': {
+				slidesPerView: 3,
 			},
-			breakpoints: {
-				'1600': {
-					slidesPerView: 3,
-				},
-				'1500': {
-					slidesPerView: 3,
-				},
-				'1400': {
-					slidesPerView: 3,
-				},
-				'1300': {
-					slidesPerView: 3,
-				},
-				'992': {
-					slidesPerView: 2,
-				},
-				'768': {
-					slidesPerView: 1,
-				},
-				'576': {
-					slidesPerView: 1,
-				},
-				'0': {
-					slidesPerView: 1,
-				},
+			'1500': {
+				slidesPerView: 3,
 			},
-		});
+			'1400': {
+				slidesPerView: 3,
+			},
+			'1300': {
+				slidesPerView: 3,
+			},
+			'992': {
+				slidesPerView: 2,
+			},
+			'768': {
+				slidesPerView: 1,
+			},
+			'576': {
+				slidesPerView: 1,
+			},
+			'0': {
+				slidesPerView: 1,
+			},
+		},
+	});
 	var slider = new Swiper('.hap-gallery-slide', {
 		slidesPerView: 7,
 		spaceBetween: 0,
@@ -657,7 +662,7 @@ Last change:    00/00/00
 				scale: 1,
 				opacity: 1,
 				duration: 1,
-				stagger: .2,
+				stagger: .3,
 			});
 		});
 		if ($('.title_text').length) {
@@ -711,6 +716,68 @@ Last change:    00/00/00
 			});
 		}
 	};
+	if($('.gray_text').length) {
+		var about_text = $(".gray_text");
+		if(about_text.length == 0) return; gsap.registerPlugin(SplitText); about_text.each(function(index, text) {
+			text.split = new SplitText(text, { 
+				type: "lines,words,chars",
+				linesClass: "split-line"
+			});
+			if( $(text).hasClass('gray_text') ){
+				gsap.set(text.split.chars, {
+					opacity: .35,
+				});
+			}
+			text.anim = gsap.to(text.split.chars, {
+				scrollTrigger: {
+					trigger: text,
+					start: "top 60%",
+					end: "top 10%",
+					markers: false,
+					scrub: 1,
+				},
+				opacity: 1,
+				duration: .7,
+				stagger: 0.2,
+			});
+
+		});
+	}
+
+	if (window.matchMedia("(min-width: 1200px)").matches) { 
+		gsap.utils.toArray('.img_left').forEach((el) => { 
+			gsap.fromTo(el, 
+				{ opacity: 1, x: 0, transformOrigin: 'center center' },
+				{ opacity: 1, x: -150, duration: 1, 
+				scrollTrigger: {
+					trigger: ".ag-hero-content-4",
+					scrub: 2,
+					start: "top 10%",
+					end: "bottom 0%",
+					toggleActions: "play none none reverse",
+					markers: false
+				}
+			}
+			);
+		});
+	};
+	if (window.matchMedia("(min-width: 1200px)").matches) { 
+		gsap.utils.toArray('.play_move').forEach((el) => { 
+			gsap.fromTo(el, 
+				{ opacity: 1, y: 0, x: 0, borderRadius:0, transformOrigin: 'center center' },
+				{ opacity: 1, y: 300, x: -800, borderRadius: "300px", duration: 1, 
+				scrollTrigger: {
+					trigger: ".ag-hero-content-4",
+					scrub: 1,
+					start: "top 20%",
+					end: "bottom 0%",
+					toggleActions: "play none none reverse",
+					markers: false
+				}
+			}
+			);
+		});
+	};
 	gsap.utils.toArray('.appear_top').forEach((el) => { 
 		gsap.fromTo(el, 
 			{ opacity: 0, y: 150, transformOrigin: 'center center' },
@@ -744,6 +811,37 @@ Last change:    00/00/00
 			ease: "none",
 		});
 	});
+	gsap.utils.toArray('.ag-pro-scale-1 ').forEach((el, index) => {
+		let tl1 = gsap.timeline({
+			scrollTrigger: {
+				trigger: el,
+				scrub: 1,
+				start: "top 90%",
+				end: "buttom 50%",
+				toggleActions: "play none none reverse",
+				markers: false
+			}
+		})
+
+		tl1
+		.set(el, { perspective: 2000 , transformStyle: "preserve-3d" , transformOrigin: "0% 50%" })
+		.from(el , { scaleX: .2  , opacity: 0})
+	})
+	gsap.utils.toArray('.ag-pro-scale-2 ').forEach((el, index) => {
+		let tl1 = gsap.timeline({
+			scrollTrigger: {
+				trigger: el,
+				scrub: 1,
+				start: "top 90%",
+				end: "buttom 50%",
+				toggleActions: "play none none reverse",
+				markers: false
+			}
+		})
+		tl1
+		.set(el, { perspective: 2000 , transformStyle: "preserve-3d" , transformOrigin: "100% 50%" })
+		.from(el , { scaleX: .2  , opacity: 0})
+	})
 	let imageBins = gsap.timeline({
 		scrollTrigger: {
 			trigger: ".item-zoom-img",
