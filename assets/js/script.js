@@ -9,7 +9,10 @@ Last change:    00/00/00
 ;(function($) {
 
 	"use strict";
-
+	jQuery(window).on('load', function(){
+		jQuery('#preloader').fadeOut('slow',function(){jQuery(this).remove();});
+		
+	});
 	gsap.config({
 		nullTargetWarn: false,
 	});
