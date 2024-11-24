@@ -15,6 +15,12 @@
 		position: absolute;
 		font-family: var(--ag-heading);
 	}
+	.ag-section-title {
+		max-width: 1000px;
+		h2 {
+			font-size: 40px;
+		}
+	}
 	.title-text {
 		padding-left: 180px;
 		@media #{$sm,$xs} {

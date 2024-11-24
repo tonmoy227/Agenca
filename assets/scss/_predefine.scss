@@ -541,6 +541,28 @@ select:visited {
 		}
 	}
 }
+.ag-pagination {
+	ul {
+		li {
+			a {
+				width: 52px;
+				height: 52px;
+				display: flex;
+				font-size: 20px;
+				align-items: center;
+				border-radius: 2px;
+				justify-content: center;
+				border: 2px solid rgba(241, 241, 241, 1);
+				&.active,
+				&:hover {
+					color: #fff;
+					background-color: #6255ED;
+					border: 2px solid #6255ED;
+				}
+			}
+		}
+	}
+}
 // txa-common-css-start
 
 @for $i from 1 through 40 {

@@ -1,0 +1,52 @@
+.mt-portfolio-details-text {
+	margin: 0 auto;
+	max-width: 735px;
+}
+.mt-gallery-wrap {
+	margin: 0 auto;
+	max-width: 1060px;
+}
+.mt-portfolio-details-text {
+	h3,h2  {
+		font-size: 28px;
+		padding-bottom: 20px;
+		color: var(--ag-title-color);
+	}
+	h2 {
+		font-size: 32px;
+	}
+	p {
+		padding-bottom: 30px;
+	}
+	ul {
+		margin-bottom: 50px;
+		li {
+			display: flex;
+			align-items: center;
+			margin-bottom: 10px;
+			i {
+				padding-right: 10px;
+				color: var(--ag-title-color);
+			}
+		}
+	}
+}
+.mt-pd-item-img {
+	overflow: hidden;
+	border-radius: 20px;
+}
+.mt-gallery-wrap {
+	.g-inner-item {
+		margin-bottom: 30px;
+	}
+	.item-img {
+		height: 100%;
+		width: 100%;
+		display: inline-block;
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+}

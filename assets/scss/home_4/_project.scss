@@ -1,7 +1,36 @@
+.ag-project-section-4 {
+	overflow: hidden;
+	.hand-img {
+		left: 0;
+		top: 20%;
+	}
+}
+.ag-project-content-4 {
+	overflow: hidden;
+}
+.ag-project-inner-4 {
+	background-color: #fff;
+	&:not(:first-child) { 
+		left: 0;
+		top: 100px;
+		width: 100%;
+		position: absolute;
+		clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+		@media #{$lg,$md,$sm,$xs} {
+			position: static;
+			clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+		}
+	}
+	&.pro-item-2 {
+		z-index: 2;
+	}
+	&.pro-item-3 {
+		z-index: 3;
+	}
+}
 .ag-project-item-4 {
 	z-index: 1;
 	gap: 24px;
-	padding-top: 44px;
 	margin-bottom: 70px;
 	@media #{$lg,$md,$sm,$xs} {
 		padding-top: 0;
@@ -9,7 +38,7 @@
 		justify-content: center;
 	}
 	&:before {
-		top: 0;
+		top: -44px;
 		right: 38%;
 		z-index: -1;
 		width: 289px;
@@ -91,6 +120,10 @@
 				border-radius: 4px;
 				display: inline-block;
 				border: 2px solid #414141;
+				&:hover {
+					color: #fff;
+					background-color: #414141;
+				}
 			}
 		}
 	}

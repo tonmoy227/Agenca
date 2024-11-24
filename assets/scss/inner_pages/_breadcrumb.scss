@@ -1,0 +1,144 @@
+.ag-breadcrumb-section {
+	z-index: 1;
+	overflow: hidden;
+	&:before {
+		top: 0;
+		left: 0;
+		z-index: -2;
+		width: 100%;
+		content: '';
+		height: 100%;
+		position: absolute;
+		background: linear-gradient(90deg, #000000 36.4%, rgba(0, 0, 0, 0) 100%);
+	}
+	.ag-breadcrumb-shape {
+		left: -40%;
+		bottom: -50%;
+		z-index: -1;
+	}
+	&.single_version {
+		z-index: 1;
+		&:before {
+			display: none;
+		}
+		&:after {
+			left: 0;
+			bottom: 0;
+			z-index: -1;
+			width: 100%;
+			content: '';
+			height: 290px;
+			position: absolute;
+			background-color: #fff;
+			@media #{$md,$xs} {
+				display: none;
+			}
+		}
+		.ag-single-title {
+			padding: 245px 0 0px;
+			@media #{$xs} {
+				padding-top: 150px;
+			}
+			h2 {
+				color: #fff;
+				font-size: 90px;
+				line-height: 1.111;
+				padding-bottom: 50px;
+				@media #{$md,$xs} {
+					font-size: 60px;
+				}
+				@media #{$xxs} {
+					font-size: 60px;
+				}
+			}
+		}
+		.ag-signle-thumb {
+			.ag-single-info {
+				top: -24%;
+				right: 90px;
+				position: absolute;
+				padding: 30px 40px;
+				border-radius: 12px;
+				background-color: #494958;
+				@media #{$md,$xs} {
+					top: 0;
+					right: 0;
+					border-radius: 0px;
+				}
+				@media #{$xs} {
+					position: static;
+				}
+				li {
+					color: #fff;
+					font-weight: 500;
+					margin-bottom: 15px;
+					&:last-child {
+						margin-bottom: 0;
+					}
+					span {
+						color: #fff;
+						font-weight: 700;
+						margin-right: 8px;
+					}
+				}
+			}
+		}
+	}
+}
+.ag-breadcrumb-content {
+	padding: 255px 0px 215px;
+	@media #{$md,$xs} {
+		padding: 180px 0px 140px;
+	}
+}
+.ag-breadcrumb-text {
+	max-width: 610px;
+	.bread_title {
+		color: #fff;
+		font-size: 70px;
+		line-height: 1.2;
+		padding-bottom: 30px;
+		@media #{$md,$xs} {
+			font-size: 50px;
+		}
+		@media #{$xxs} {
+			font-size: 35px;
+		}
+	}
+	p {
+		color: #fff;
+	}
+}
+.ag-breadcrumb-list {
+	right: 0;
+	z-index: 1;
+	bottom: 0;
+	overflow: hidden;
+	position: absolute;
+	background-color: #fff;
+	padding: 20px 20px 16px;
+	li {
+		font-weight: 600;
+		color: #B1B1B1;
+		font-size: 16px;
+		margin: 0px 20px;
+		position: relative;
+		&:before {
+			top: 3px;
+			right: -33px;
+			width: 18px;
+			content: "";
+			height: 18px;
+			position: absolute;
+			background-image: url(../img/icon/arrow-2.svg);
+		}
+		a {
+			color: #060606;
+		}
+		&:last-child {
+			&:before {
+				display: none;
+			}
+		}
+	}
+}

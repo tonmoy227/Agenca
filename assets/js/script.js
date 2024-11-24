@@ -146,6 +146,18 @@ Last change:    00/00/00
 		);
 		wow.init();
 	};
+	if ($(".progress-bar").length) {
+		var $progress_bar = $('.progress-bar');
+		$progress_bar.appear();
+		$(document.body).on('appear', '.progress-bar', function() {
+			var current_item = $(this);
+			if (!current_item.hasClass('appeared')) {
+				var percent = current_item.data('percent');
+				current_item.css('width', percent + '%').addClass('appeared').parent().append('<span>' + percent + '%' + '</span>');
+			}
+
+		});
+	};
 	$(window).on("load", function () {
 		Splitting();
 	});
@@ -530,6 +542,38 @@ Last change:    00/00/00
 			.fromTo(el, { xPercent: 0 }, { xPercent: -100 , duration: 30, immediateRender: false})
 		});
 	}
+	if(window.innerWidth> 1200){
+		var AgProject = gsap.timeline({
+
+			scrollTrigger: {
+				animation: AgProject,
+				trigger: '.ag-project-content-4',
+				start: "top 10%",
+				end: "bottom -=200",
+				scrub: 2,
+				pin: true,
+				pinSpacing: true,
+			}
+
+		});
+
+		AgProject
+		.to(".pro-item-2", {clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",  duration: 2})
+		.to(".pro-item-3", {clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",  duration: 2})
+		const Agpro = gsap.utils.toArray('.ag-project-inner-4');
+		Agpro.forEach(item => {
+			gsap.to(item, {
+				scrollTrigger: {
+					trigger: item,
+					scrub: 1,
+					start: "top 80%",
+					end: "bottom bottom",
+					toggleActions: "play none none reverse",
+					once: true,
+				}
+			});
+		});
+	}
 	if (window.matchMedia("(min-width: 1200px)").matches) { 
 		gsap.utils.toArray('.ag-team-bg-text-1').forEach((el, index) => { 
 			let TeamBg = gsap.timeline({
@@ -751,11 +795,11 @@ Last change:    00/00/00
 		gsap.utils.toArray('.img_left').forEach((el) => { 
 			gsap.fromTo(el, 
 				{ opacity: 1, x: 0, transformOrigin: 'center center' },
-				{ opacity: 1, x: -150, duration: 1, 
+				{ opacity: 1, x: -220, duration: 1, 
 				scrollTrigger: {
 					trigger: ".ag-hero-content-4",
-					scrub: 2,
-					start: "top 10%",
+					scrub: 1,
+					start: "top 75%",
 					end: "bottom 0%",
 					toggleActions: "play none none reverse",
 					markers: false
@@ -768,12 +812,12 @@ Last change:    00/00/00
 		gsap.utils.toArray('.play_move').forEach((el) => { 
 			gsap.fromTo(el, 
 				{ opacity: 1, y: 0, x: 0, borderRadius:0, transformOrigin: 'center center' },
-				{ opacity: 1, y: 300, x: -800, borderRadius: "300px", duration: 1, 
+				{ opacity: 1, y: 500, x: -1100, borderRadius: "300px", duration: 1, 
 				scrollTrigger: {
 					trigger: ".ag-hero-content-4",
 					scrub: 1,
 					start: "top 20%",
-					end: "bottom 0%",
+					end: "bottom -50%",
 					toggleActions: "play none none reverse",
 					markers: false
 				}
@@ -814,37 +858,6 @@ Last change:    00/00/00
 			ease: "none",
 		});
 	});
-	gsap.utils.toArray('.ag-pro-scale-1 ').forEach((el, index) => {
-		let tl1 = gsap.timeline({
-			scrollTrigger: {
-				trigger: el,
-				scrub: 1,
-				start: "top 90%",
-				end: "buttom 50%",
-				toggleActions: "play none none reverse",
-				markers: false
-			}
-		})
-
-		tl1
-		.set(el, { perspective: 2000 , transformStyle: "preserve-3d" , transformOrigin: "0% 50%" })
-		.from(el , { scaleX: .2  , opacity: 0})
-	})
-	gsap.utils.toArray('.ag-pro-scale-2 ').forEach((el, index) => {
-		let tl1 = gsap.timeline({
-			scrollTrigger: {
-				trigger: el,
-				scrub: 1,
-				start: "top 90%",
-				end: "buttom 50%",
-				toggleActions: "play none none reverse",
-				markers: false
-			}
-		})
-		tl1
-		.set(el, { perspective: 2000 , transformStyle: "preserve-3d" , transformOrigin: "100% 50%" })
-		.from(el , { scaleX: .2  , opacity: 0})
-	})
 	let imageBins = gsap.timeline({
 		scrollTrigger: {
 			trigger: ".item-zoom-img",
