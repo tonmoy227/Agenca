@@ -563,6 +563,24 @@ select:visited {
 		}
 	}
 }
+.ag-error-content {
+	z-index: 1;
+	padding: 380px 0px 150px;
+	h2 {
+		top: 14%;
+		left: -5%;
+		z-index: -1;
+		right: 0;
+		color: #F5F5F5;
+		font-size: 440px;
+		position: absolute;
+	}
+	h3 {
+		font-size: 40px;
+		padding-top: 30px;
+		color: var(--ag-title-color);
+	}
+}
 // txa-common-css-start
 
 @for $i from 1 through 40 {

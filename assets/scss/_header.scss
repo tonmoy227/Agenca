@@ -155,6 +155,10 @@
 	}
 	&.header_style_one {
 		padding-top: 70px;
+		&.dark_bg {
+			padding: 20px 0px;
+			background-color: #000;
+		}
 		@media #{$md,$sm,$xs} {
 			padding-top: 30px;
 		}

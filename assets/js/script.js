@@ -542,6 +542,18 @@ Last change:    00/00/00
 			.fromTo(el, { xPercent: 0 }, { xPercent: -100 , duration: 30, immediateRender: false})
 		});
 	}
+	if ($('.blog-item-img-slide').length > 0 ) {
+		var blog_Slider = new Swiper(".blog-item-img-slide", {
+			loop: true,
+			slidesPerView: 1,
+			centeredSlides: true,
+			speed: 1000,
+			navigation: {
+				nextEl: ".log-blog-button-prev",
+				prevEl: ".log-blog-button-next",
+			},
+		});
+	}
 	if(window.innerWidth> 1200){
 		var AgProject = gsap.timeline({
 
